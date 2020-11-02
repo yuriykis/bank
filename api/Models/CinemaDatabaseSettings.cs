@@ -6,24 +6,20 @@ using System.Threading.Tasks;
 namespace api.Models
 {
 
-    public class CinemaDatabaseSettings : ICinemaDatabaseSettings
+    public class BankDatabaseSettings : IBankDatabaseSettings
     {
-        public string RoomsCollectionName { get; set; }
+        public string AccountsCollectionName { get; set; }
         public string UsersCollectionName { get; set; }
-        public string FilmsCollectionName { get; set; }
-        public string FilmShowingsCollectionName { get; set; }
-        public string WatchersCollectionName { get; set; }
+        public string TransactionsCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
     }
 
-    public interface ICinemaDatabaseSettings
+    public interface IBankDatabaseSettings
     {
-        string RoomsCollectionName { get; set; }
+        string AccountsCollectionName { get; set; }
         string UsersCollectionName { get; set; }
-        string FilmsCollectionName { get; set; }
-        string FilmShowingsCollectionName { get; set; }
-        string WatchersCollectionName { get; set; }
+        string TransactionsCollectionName { get; set; }
         string ConnectionString { get; set; }
         string DatabaseName { get; set; }
     }

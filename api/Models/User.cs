@@ -18,5 +18,8 @@ namespace api.Models
 
         [BsonElement("password")]
         public string password { get; set; }
+
+        [BsonElement("account_id")]
+        public string account_id { get; set; }
     }
 }

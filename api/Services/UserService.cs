@@ -11,7 +11,7 @@ namespace api.Services
     {
         private readonly IMongoCollection<User> _users;
 
-        public UserService(ICinemaDatabaseSettings settings)
+        public UserService(IBankDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);

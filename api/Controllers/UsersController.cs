@@ -19,6 +19,10 @@ namespace UsersApi.Controllers
             _userService = UserService;
         }
 
+        [HttpGet]
+        public ActionResult<List<User>> Get() =>
+            _userService.Get();
+
 
         [HttpGet("{name}/{password}", Name = "GetUser")]
         public ActionResult<int> Get(String name, String password)

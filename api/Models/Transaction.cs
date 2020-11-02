@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 
 namespace api.Models
 {
-    public class Room
+    public class Transaction
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; }
 
-        [BsonElement("name")]
-        public string name { get; set; }
+        [BsonElement("sender_account_id")]
+        public string sender_account_id { get; set; }
 
-        [BsonElement("numberOfSeats")]
-        public int numberOfSeats { get; set; }
+        [BsonElement("reciver_account_id")]
+        public string reciver_account_id { get; set; }
+
+        [BsonElement("amount")]
+        public long amount { get; set; }
     }
 }

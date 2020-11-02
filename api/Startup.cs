@@ -30,17 +30,15 @@ namespace api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CinemaDatabaseSettings>(
-                Configuration.GetSection(nameof(CinemaDatabaseSettings)));
+            services.Configure<BankDatabaseSettings>(
+                Configuration.GetSection(nameof(BankDatabaseSettings)));
 
-            services.AddSingleton<ICinemaDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<CinemaDatabaseSettings>>().Value);
+            services.AddSingleton<IBankDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<BankDatabaseSettings>>().Value);
 
-            services.AddSingleton<FilmService>();
-            services.AddSingleton<FilmShowingService>();
-            services.AddSingleton<WatcherService>();
+            services.AddSingleton<TransactionService>();
             services.AddSingleton<UserService>();
-            services.AddSingleton<RoomService>();
+            services.AddSingleton<AccountService>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

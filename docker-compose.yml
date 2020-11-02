@@ -6,7 +6,8 @@ services:
     build:
       context: .
       dockerfile: api/Dockerfile
-
+        ports: 
+          - "5001:5001"
   web:
     image: ${DOCKER_REGISTRY-}web
     build:

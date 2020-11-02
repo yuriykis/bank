@@ -7,19 +7,13 @@ using System.Threading.Tasks;
 
 namespace api.Models
 {
-    public class Watcher
+    public class Account
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; }
 
-        [BsonElement("seatNumber")]
-        public int seatNumber { get; set; }
-
-        [BsonElement("userId")]
-        public string userId { get; set; }
-
-        [BsonElement("filmShowingId")]
-        public string filmShowingId { get; set; }
+        [BsonElement("amount")]
+        public long amount { get; set; }
     }
 }
