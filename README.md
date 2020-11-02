@@ -28,5 +28,10 @@ Requirements:
  and yes it's fucking hello world!
  
  
- api won't work if you don't have mongodb database (currently unnecessary) but it has leftover code.
- you can check it out to introduce yourself to how it works
+ Mongo:
+ 
+ no need to instal mongodb compas
+ installation guide:
+https://docs.mongodb.com/manual/installation/
+
+run mongo shell and use command from facebook file to insert init data to datebase
