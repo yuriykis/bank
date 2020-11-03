@@ -15,5 +15,8 @@ namespace api.Models
 
         [BsonElement("amount")]
         public long amount { get; set; }
+
+        [BsonElement("account_number")]
+        public long account_number { get; set; }
     }
 }
