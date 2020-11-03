@@ -1,27 +1,17 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
-ARG BUILD_CONFIGURATION=Debug
-ENV ASPNETCORE_ENVIRONMENT=Development
-ENV DOTNET_USE_POLLING_FILE_WATCHER=true  
-ENV ASPNETCORE_URLS=http://+:80  
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 EXPOSE 5000
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
-WORKDIR /src
-COPY ["web/web.csproj", "web/"]
-RUN dotnet restore "web/web.csproj"
-COPY . .
-WORKDIR "/src/web"
-RUN dotnet build "web.csproj" -c Release -o /app/build
+# Copy csproj and restore as distinct layers
+COPY web/web.csproj ./
+RUN dotnet restore
 
-FROM build AS publish
-RUN dotnet publish "web.csproj" -c Release -o /app/publish
+# Copy everything else and build
+COPY web/ ./
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "web.dll"]
