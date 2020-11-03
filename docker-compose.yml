@@ -1,15 +1,39 @@
 version: '3.4'
 
 services:
+
+  mongo:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: adminadmin
+    #   MONGO_INITDB_ROOT_PASSWORD: adminadmin
+    volumes: 
+      - ./db_data:/data/db
+    ports:
+      - 27017:27017 # na potrzeby testowania
+
+    
   api:
-    image: ${DOCKER_REGISTRY-}api
     build:
       context: .
       dockerfile: api/Dockerfile
-        ports: 
-          - "5001:5001"
+    container_name: api
+    ports:
+      - 80:80 # na potrzeby testowania
+    restart: always
+    depends_on: 
+      - mongo
+
+
   web:
-    image: ${DOCKER_REGISTRY-}web
     build:
       context: .
       dockerfile: web/Dockerfile
+    container_name: web
+    ports:
+      - 5000:5000
+    restart: always
+    depends_on: 
+      - api
