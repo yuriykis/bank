@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web", "web\web.csproj", "{A2F9F667-D9B0-4B37-8F09-F5CFD0F60AF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3172E42-1E3D-4015-96AC-D1625DE3AFB3}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Desktop\bank_commands.txt = ..\..\Desktop\bank_commands.txt
+	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B300E20C-AE47-4148-83E6-1110FCDF3F19}"
 EndProject
