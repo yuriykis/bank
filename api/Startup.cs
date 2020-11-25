@@ -15,6 +15,7 @@ using api.Models;
 using MongoDB.Driver;
 using Microsoft.Extensions.Options;
 using api.Services;
+using MediatR;
 
 namespace api
 {
@@ -39,6 +40,7 @@ namespace api
             services.AddSingleton<TransactionService>();
             services.AddSingleton<UserService>();
             services.AddSingleton<AccountService>();
+            services.AddMediatR(typeof(Startup));
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

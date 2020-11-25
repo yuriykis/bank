@@ -21,7 +21,7 @@ services:
       dockerfile: api/Dockerfile
     container_name: api
     ports:
-      - 80:80 # na potrzeby testowania
+      - 1111:80 # na potrzeby testowania
     restart: always
     depends_on: 
       - mongo

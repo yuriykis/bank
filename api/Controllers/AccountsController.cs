@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using api.Commands.AccountCommands;
+using api.Queries;
+using MediatR;
 
 namespace accountsApi.Controllers
 {
@@ -11,61 +15,59 @@ namespace accountsApi.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private readonly AccountService _accountService;
-        private readonly UserService _userService;
+        private readonly IMediator _mediator;
 
-        public AccountsController(AccountService accountService, UserService userService)
+        public AccountsController(IMediator mediator)
         {
-            _accountService = accountService;
-            _userService = userService;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public ActionResult<List<Account>> Get() =>
-            _accountService.Get();
-
-        [HttpGet("{id:length(24)}", Name = "Getaccount")]
-        public ActionResult<Account> Get(string id)
+        public async Task<ActionResult<List<Account>>> Get()
         {
-            var account = _accountService.Get(id);
-
-            if (account == null)
-            {
-                return NotFound();
-            }
-
-            return account;
+            var query = new GetAllAccountsQuery();
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
-
+        
+        [HttpGet(template: "{id}", Name = "GetAccount")]
+        public async Task<ActionResult<Account>> Get(String id)
+        {
+            var query = new GetAccountByIdQuery(id);
+            var result = await _mediator.Send(query);
+            return result != null ? (ActionResult<Account>) Ok(result) : NotFound();
+        }
+        
+        
 
         [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Account accountIn)
+        public async Task<IActionResult> Update(string id, Account accountIn)
         {
-            var account = _accountService.Get(id);
-
-            if (account == null)
+            var command = new UpdateAccountCommand(id, accountIn);
+            var result = await _mediator.Send(command);
+            if (result)
+            {
+                return NoContent();
+            }
+            else
             {
                 return NotFound();
             }
-
-            _accountService.Update(id, accountIn);
-
-            return NoContent();
         }
 
         [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
-            var account = _accountService.Get(id);
-
-            if (account == null)
+            var command = new DeleteAccountCommand(id);
+            var result = await _mediator.Send(command);
+            if (result)
+            {
+                return NoContent();
+            }
+            else
             {
                 return NotFound();
             }
-
-            _accountService.Remove(account.id);
-
-            return NoContent();
         }
     }
 }
