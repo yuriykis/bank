@@ -12,7 +12,7 @@ services:
     volumes: 
       - ./db_data:/data/db
     ports:
-      - 27017:27017 # na potrzeby testowania
+      - 27017:27017
 
     
   api:
@@ -21,7 +21,7 @@ services:
       dockerfile: api/Dockerfile
     container_name: api
     ports:
-      - 80:80 # na potrzeby testowania
+      - 5001:5001 # na potrzeby testowania
     restart: always
     depends_on: 
       - mongo
