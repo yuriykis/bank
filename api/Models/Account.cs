@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace api.Models
 {
@@ -15,8 +16,8 @@ namespace api.Models
 
         [BsonElement("amount")]
         public long amount { get; set; }
-
-        [BsonElement("account_number")]
-        public long account_number { get; set; }
+        
+        [BsonElement("user_id")]
+        public long user_id { get; set; }
     }
 }
