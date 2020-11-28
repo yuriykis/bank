@@ -17,7 +17,7 @@ namespace Accounts.Service.Handlers
 
         public async Task<bool> Handle(DeleteAccountCommand request, CancellationToken cancellationToken)
         {
-            var account = _accountService.Get(request.Id);
+            var account = await _accountService.Get(request.Id);
 
             if (account == null)
             {

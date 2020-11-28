@@ -26,7 +26,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="" />
+    <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAllAccountsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAllAccountsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/Services/AccountsAmountUpdateService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Services/AccountsAmountUpdateService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,15 +62,10 @@
     <setting file="file://$PROJECT_DIR$/Users.Service/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Users.Service/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/api/Controllers/UsersController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Users.Service/Startup.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Models/Account.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Messaging/Options.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Handlers/GetAllUsersHandler.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Commands/DeleteUserCommand.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" />
@@ -64,31 +77,20 @@
         <option value="$PROJECT_DIR$/Transactions.Service/Commands/DeleteTransactionCommand.cs" />
         <option value="$PROJECT_DIR$/api/Models/User.cs" />
         <option value="$PROJECT_DIR$/api/Models/Account.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Commands/UpdateTransactionCommand.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Commands/UpdateAccountCommand.cs" />
-        <option value="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" />
-        <option value="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Handlers/UpdateAccountHandler.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Models/Account.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Models/User.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Handlers/DeleteUserHandler.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Handlers/GetUserByIdHandler.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Handlers/UpdateUserHandler.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Commands/UpdateUserCommand.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Options.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/RabbitMqConfiguration.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Options/RabbitMqConfiguration.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/ITransactionUpdateSender.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/TransactionUpdateSender.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/appsettings.json" />
         <option value="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Messaging/Options/RabbitMqConfiguration.cs" />
@@ -100,6 +102,21 @@
         <option value="$PROJECT_DIR$/Transactions.Service/Startup.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Startup.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Services/AccountsAmountUpdateService.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" />
+        <option value="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" />
+        <option value="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" />
+        <option value="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" />
+        <option value="$PROJECT_DIR$/Accounts.Service/Handlers/GetAllAccountsHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Services/UserService.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +137,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Accounts.Service: api">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Transactions.Service: api">
     <configuration name="Accounts.Service: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -299,7 +316,7 @@
       <workItem from="1606322694470" duration="18680000" />
       <workItem from="1606413064761" duration="13507000" />
       <workItem from="1606490948318" duration="13010000" />
-      <workItem from="1606558598907" duration="27583000" />
+      <workItem from="1606558598907" duration="31502000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -329,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606599131532</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remove-old-api">
+      <created>1606599225144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606599225144</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +379,8 @@
     <MESSAGE value="configure-docker-correctly" />
     <MESSAGE value="add-three-microservices" />
     <MESSAGE value="implement-rabbitmq-transactions-and-accounts-services" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement-rabbitmq-transactions-and-accounts-services" />
+    <MESSAGE value="remove-old-api" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove-old-api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606241031449">
@@ -366,22 +391,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="459" height="464" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1606598936901" />
-    <state width="1493" height="201" key="GridCell.Tab.0.bottom" timestamp="1606599144302">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1606603701335">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606599144302" />
-    <state width="1493" height="201" key="GridCell.Tab.0.center" timestamp="1606599144302">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606603701335" />
+    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1606603701334">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606599144302" />
-    <state width="1493" height="201" key="GridCell.Tab.0.left" timestamp="1606599144302">
+    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606603701334" />
+    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1606603701334">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606599144302" />
-    <state width="1493" height="201" key="GridCell.Tab.0.right" timestamp="1606599144302">
+    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606603701334" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1606603701334">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606599144302" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606603701334" />
     <state width="1493" height="201" key="GridCell.Tab.1.bottom" timestamp="1606599144303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -454,10 +479,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size/0.0.1536.864@0.0.1536.864" timestamp="1606515308973" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606599180485">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606599237173">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606599180485" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606599237173" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606413469652">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

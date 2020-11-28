@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Users.Service.Commands;
 using Users.Service.Models;
@@ -38,12 +39,22 @@ namespace Users.Service.Controllers
             return result != null ? (ActionResult<User>) Ok(result) : NotFound();
         }
 
+        
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public async Task<ActionResult<int>> Create([FromBody] CreateUserCommand command)
+        public async Task<ActionResult<User>> Create([FromBody] CreateUserCommand command)
         {
-            var result = await _mediator.Send(command);
-            return result;
-            
+            try
+            {
+                var result = await _mediator.Send(command);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpPut("{id:length(24)}")]

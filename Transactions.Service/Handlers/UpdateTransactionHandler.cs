@@ -17,9 +17,9 @@ namespace Transactions.Service.Handlers
 
         public async Task<bool> Handle(UpdateTransactionCommand request, CancellationToken cancellationToken)
         {
-            var user = _transactionService.Get(request.Id);
+            var transaction = await _transactionService.Get(request.Id);
 
-            if (user == null)
+            if (transaction == null)
             {
                 return false;
             }

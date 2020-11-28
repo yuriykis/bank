@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using MongoDB.Driver;
 using Users.Service.Models;
 
@@ -16,25 +17,31 @@ namespace Users.Service.Services
             _users = database.GetCollection<User>(settings.UsersCollectionName);
         }
 
-        public List<User> Get() =>
-            _users.Find(user => true).ToList();
-
-        public User Get(string id) =>
-            _users.Find<User>(user => user.Id == id).FirstOrDefault();
-
-        public User Create(User user)
+        public async Task<List<User>> Get()
         {
-            _users.InsertOne(user);
+            var response = await _users.FindAsync(user => true);
+            return response.ToList();
+        }
+
+        public async Task<User> Get(string id)
+        {
+            var response = await _users.FindAsync<User>(user => user.Id == id);
+            return response.FirstOrDefault();
+        }
+
+        public async Task<User> Create(User user)
+        {
+            await _users.InsertOneAsync(user);
             return user;
         }
 
-        public void Update(string id, User userIn) =>
-            _users.ReplaceOne(user => user.Id == id, userIn);
+        public async void Update(string id, User userIn) =>
+            await _users.ReplaceOneAsync(user => user.Id == id, userIn);
 
-        public void Remove(User userIn) =>
-            _users.DeleteOne(user => user.Id == userIn.Id);
+        public async void Remove(User userIn) =>
+            await _users.DeleteOneAsync(user => user.Id == userIn.Id);
 
-        public void Remove(string id) =>
-            _users.DeleteOne(user => user.Id == id);
+        public async void Remove(string id) =>
+            await _users.DeleteOneAsync(user => user.Id == id);
     }
 }

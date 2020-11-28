@@ -9,7 +9,7 @@ using Transactions.Service.Services;
 
 namespace Transactions.Service.Handlers
 {
-    public class CreateTransactionHandler : IRequestHandler<CreateTransactionCommand, int>
+    public class CreateTransactionHandler : IRequestHandler<CreateTransactionCommand, Transaction>
     {
         private readonly TransactionService _transactionService;
         private readonly ITransactionUpdateSender _transactionUpdateSender;
@@ -20,7 +20,7 @@ namespace Transactions.Service.Handlers
             _transactionUpdateSender = transactionUpdateSender;
         }
 
-        public async Task<int> Handle(CreateTransactionCommand request, CancellationToken cancellationToken)
+        public async Task<Transaction> Handle(CreateTransactionCommand request, CancellationToken cancellationToken)
         {
             var senderAccountId = request.SenderAccountId;
             var receiverAccountId = request.ReceiverAccountId;
@@ -36,7 +36,7 @@ namespace Transactions.Service.Handlers
             _transactionService.Create(newTransaction);
             _transactionUpdateSender.SendTransaction(newTransaction);
             
-            return 200;
+            return newTransaction;
         }
     }
 }

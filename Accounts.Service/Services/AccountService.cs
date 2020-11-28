@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Accounts.Service.Models;
 using MongoDB.Driver;
 
@@ -16,25 +17,31 @@ namespace Accounts.Service.Services
             _accounts = database.GetCollection<Account>(settings.AccountsCollectionName);
         }
 
-        public List<Account> Get() =>
-            _accounts.Find(account => true).ToList();
-
-        public Account Get(string id) =>
-            _accounts.Find<Account>(account => account.Id == id).FirstOrDefault();
-
-        public Account Create(Account account)
+        public async Task<List<Account>> Get()
         {
-            _accounts.InsertOne(account);
+            var response = await _accounts.FindAsync(account => true);
+            return response.ToList();
+        }
+
+        public async Task<Account> Get(string id)
+        {
+            var response = await _accounts.FindAsync(account => account.Id == id);
+            return response.FirstOrDefault();
+        }
+
+        public async Task<Account> Create(Account account)
+        {
+            await _accounts.InsertOneAsync(account);
             return account;
         }
 
-        public void Update(string id, Account accountIn) =>
-            _accounts.ReplaceOne(account => account.Id == id, accountIn);
+        public async void Update(string id, Account accountIn) =>
+            await _accounts.ReplaceOneAsync(account => account.Id == id, accountIn);
 
-        public void Remove(Account accountIn) =>
-            _accounts.DeleteOne(account => account.Id == accountIn.Id);
+        public async void Remove(Account accountIn) =>
+            await _accounts.DeleteOneAsync(account => account.Id == accountIn.Id);
 
-        public void Remove(string id) =>
-            _accounts.DeleteOne(account => account.Id == id);
+        public async void Remove(string id) =>
+            await _accounts.DeleteOneAsync(account => account.Id == id);
     }
 }

@@ -19,7 +19,7 @@ namespace Transactions.Service.Handlers
 
         public async Task<List<Transaction>> Handle(GetAllTransactionsQuery request, CancellationToken cancellationToken)
         {
-            return _transactionService.Get();
+            return await _transactionService.Get();
         }
     }
 }

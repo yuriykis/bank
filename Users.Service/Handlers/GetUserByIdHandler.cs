@@ -18,11 +18,8 @@ namespace Users.Service.Handlers
 
         public async Task<User> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
-            var user = _userService.Get().Find(w => w.Id == request.Id);
-            if (user == null)
-            {
-                return null;
-            } 
+            var response = await _userService.Get();
+            var user = response.Find(w => w.Id == request.Id);
             return user;
         }
     }

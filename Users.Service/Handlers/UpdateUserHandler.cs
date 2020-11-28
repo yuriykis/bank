@@ -17,7 +17,7 @@ namespace Users.Service.Handlers
 
         public async Task<bool> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            var user = _userService.Get(request.Id);
+            var user = await _userService.Get(request.Id);
 
             if (user == null)
             {

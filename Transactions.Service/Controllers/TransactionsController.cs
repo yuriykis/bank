@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Transactions.Service.Commands;
 using Transactions.Service.Models;
@@ -21,9 +22,11 @@ namespace Transactions.Service.Controllers
         {
             _mediator = mediator;
         }
-
+        
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public async Task<ActionResult<int>> Create([FromBody] CreateTransactionCommand command)
+        public async Task<ActionResult<Transaction>> Create([FromBody] CreateTransactionCommand command)
         {
             var result = await _mediator.Send(command);
             return result;

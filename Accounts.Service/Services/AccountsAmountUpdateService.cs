@@ -28,7 +28,7 @@ namespace Accounts.Service.Services
                     new GetAccountByIdQuery(accountsAmountUpdateModel.ReciverAccountId)
                     );
 
-                if (senderAccount != null || receiverAccount != null)
+                if (senderAccount != null && receiverAccount != null)
                 {
                     if (senderAccount.Amount >= accountsAmountUpdateModel.Amount)
                     {

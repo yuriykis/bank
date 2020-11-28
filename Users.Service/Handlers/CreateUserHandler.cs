@@ -7,7 +7,7 @@ using Users.Service.Services;
 
 namespace Users.Service.Handlers
 {
-    public class CreateUserHandler : IRequestHandler<CreateUserCommand, int>
+    public class CreateUserHandler : IRequestHandler<CreateUserCommand, User>
     {
         private readonly UserService _userService;
 
@@ -16,21 +16,16 @@ namespace Users.Service.Handlers
             _userService = userService;
         }
 
-        public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<User> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var name = request.Name;
             var password = request.Password;
-            var user = _userService.Get().Find(w => w.Name == name);
-            if (user == null)
-            {
-                var newUser = new User { Name = name, Password = password };
-                _userService.Create(newUser);
-                return 200;
-            }
-            else
-            {
-                return 400;
-            }
+            var response1 = await _userService.Get();
+            var user = response1.Find(w => w.Name == name);
+
+            var newUser = new User { Name = name, Password = password };
+            var response = await _userService.Create(newUser);
+            return response;
         }
     }
 }

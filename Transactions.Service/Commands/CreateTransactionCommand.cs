@@ -1,8 +1,9 @@
 using MediatR;
+using Transactions.Service.Models;
 
 namespace Transactions.Service.Commands
 {
-    public class CreateTransactionCommand : IRequest<int>
+    public class CreateTransactionCommand : IRequest<Transaction>
     {
         public string SenderAccountId { get; set; }
         

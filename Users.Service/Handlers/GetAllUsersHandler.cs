@@ -19,7 +19,7 @@ namespace Users.Service.Handlers
 
         public async Task<List<User>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            return  _userService.Get();
+            return  await _userService.Get();
         }
     }
 }

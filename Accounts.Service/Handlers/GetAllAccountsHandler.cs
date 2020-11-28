@@ -18,7 +18,7 @@ namespace Accounts.Service.Handlers
         }
         public async Task<List<Account>> Handle(GetAllAccountsQuery request, CancellationToken cancellationToken)
         {
-            return _accountService.Get();
+            return await _accountService.Get();
         }
     }
 }
