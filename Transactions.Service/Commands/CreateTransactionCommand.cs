@@ -6,8 +6,8 @@ namespace Transactions.Service.Commands
     {
         public string SenderAccountId { get; set; }
         
-        public string ReciverAccountId { get; set; }
+        public string ReceiverAccountId { get; set; }
         
-        public long amount { get; set; }
+        public long Amount { get; set; }
     }
 }

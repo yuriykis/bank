@@ -18,7 +18,7 @@ namespace api.Handlers
 
         public async Task<User> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
-            User user = _userService.Get().Find(w => w.id == request.Id);
+            var user = _userService.Get().Find(w => w.id == request.Id);
             if (user == null)
             {
                 return null;

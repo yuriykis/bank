@@ -18,7 +18,7 @@ namespace api.Handlers
 
         public async Task<Transaction> Handle(GetTransactionByIdQuery request, CancellationToken cancellationToken)
         {
-            Transaction transaction = _transactionService.Get().Find(w => w.id == request.Id);
+            var transaction = _transactionService.Get().Find(w => w.id == request.Id);
             if (transaction == null)
             {
                 return null;

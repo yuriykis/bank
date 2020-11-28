@@ -18,12 +18,12 @@ namespace api.Handlers
 
         public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            string name = request.name;
-            string password = request.password;
-            User user = _userService.Get().Find(w => w.name == name);
+            var name = request.name;
+            var password = request.password;
+            var user = _userService.Get().Find(w => w.name == name);
             if (user == null)
             {
-                User newUser = new User { name = name, password = password };
+                var newUser = new User { name = name, password = password };
                 _userService.Create(newUser);
                 return 200;
             }

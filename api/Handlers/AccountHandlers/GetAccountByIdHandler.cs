@@ -19,7 +19,7 @@ namespace api.Handlers
 
         public async Task<Account> Handle(GetAccountByIdQuery request, CancellationToken cancellationToken)
         {
-            Account account = _accountService.Get(request.Id);
+            var account = _accountService.Get(request.Id);
             if (account == null)
             {
                 return null;

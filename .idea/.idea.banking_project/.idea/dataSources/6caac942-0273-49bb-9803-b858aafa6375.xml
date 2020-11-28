@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.19">
+    <root id="1">
+      <ServerVersion>4.4.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="Bank"/>
+    <schema id="3" parent="1" name="Cinema"/>
+    <schema id="4" parent="1" name="admin"/>
+    <schema id="5" parent="1" name="config"/>
+    <schema id="6" parent="1" name="local"/>
+    <table id="7" parent="2" name="Accounts"/>
+    <table id="8" parent="2" name="Transactions"/>
+    <table id="9" parent="2" name="Users"/>
+    <column id="10" parent="7" name="_id">
+      <DataType>ObjectId(0)|12s</DataType>
+    </column>
+    <column id="11" parent="7" name="amount">
+      <DataType>Double(0)|8s</DataType>
+    </column>
+    <column id="12" parent="8" name="_id">
+      <DataType>ObjectId(0)|12s</DataType>
+    </column>
+    <column id="13" parent="8" name="amount">
+      <DataType>Double(0)|8s</DataType>
+    </column>
+    <column id="14" parent="8" name="reciver_account_id">
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="15" parent="8" name="sender_account_id">
+      <Position>1</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="16" parent="9" name="_id">
+      <DataType>ObjectId(0)|12s</DataType>
+    </column>
+    <column id="17" parent="9" name="account_id">
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="18" parent="9" name="name">
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="19" parent="9" name="password">
+      <Position>1</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+  </database-model>
+</dataSource>
