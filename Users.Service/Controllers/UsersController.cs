@@ -35,6 +35,7 @@ namespace Users.Service.Controllers
         }
         
         [HttpGet(template: "{id}", Name = "GetUser")]
+        [Authorize]
         public async Task<ActionResult<User>> Get(String id)
         {
             var query = new GetUserByIdQuery(id);
@@ -81,6 +82,7 @@ namespace Users.Service.Controllers
         }
 
         [HttpPut("{id:length(24)}")]
+        [Authorize]
         public async Task<IActionResult> Update(String id, [FromBody] User userIn)
         {   var command = new UpdateUserCommand(id, userIn);
             var result = await _mediator.Send(command);
@@ -95,6 +97,7 @@ namespace Users.Service.Controllers
         }
         
         [HttpDelete("{id:length(24)}")]
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             var command = new DeleteUserCommand(id);

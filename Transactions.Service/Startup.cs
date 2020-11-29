@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Transactions.Service.Authorization.Helpers;
 using Transactions.Service.Messaging.Options;
 using Transactions.Service.Messaging.Sender;
 using Transactions.Service.Models;
@@ -32,6 +33,7 @@ namespace Transactions.Service
                 sp.GetRequiredService<IOptions<BankDatabaseSettings>>().Value);
             services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
             
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddSingleton<TransactionService>();
             services.AddTransient<ITransactionUpdateSender, TransactionUpdateSender>();
             services.AddMediatR(typeof(Startup));
@@ -60,7 +62,8 @@ namespace Transactions.Service
 
             app.UseCors("MyPolicy");
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

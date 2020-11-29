@@ -11,6 +11,16 @@
         <e p="Accounts.Service.csproj" t="IncludeRecursive" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
+        <e p="Authorization" t="Include">
+          <e p="Helpers" t="Include">
+            <e p="AppSettings.cs" t="Include" />
+            <e p="AuthorizeAttribute.cs" t="Include" />
+            <e p="JwtMiddleware.cs" t="Include" />
+          </e>
+          <e p="Models" t="Include">
+            <e p="AuthenticationUser.cs" t="Include" />
+          </e>
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Commands" t="Include">
           <e p="DeleteAccountCommand.cs" t="Include" />
@@ -73,6 +83,16 @@
       <e p="Transactions.Service" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
+        <e p="Authorization" t="Include">
+          <e p="Helpers" t="Include">
+            <e p="AppSettings.cs" t="Include" />
+            <e p="AuthorizeAttribute.cs" t="Include" />
+            <e p="JwtMiddleware.cs" t="Include" />
+          </e>
+          <e p="Models" t="Include">
+            <e p="AuthenticationUser.cs" t="Include" />
+          </e>
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Commands" t="Include">
           <e p="CreateTransactionCommand.cs" t="Include" />

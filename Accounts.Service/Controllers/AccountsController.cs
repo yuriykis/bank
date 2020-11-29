@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Accounts.Service.Authorization.Helpers;
 using Accounts.Service.Commands;
 using Accounts.Service.Models;
 using Accounts.Service.Queries;
@@ -21,6 +22,7 @@ namespace Accounts.Service.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<Account>>> Get()
         {
             var query = new GetAllAccountsQuery();
@@ -29,6 +31,7 @@ namespace Accounts.Service.Controllers
         }
         
         [HttpGet(template: "{id}", Name = "GetAccount")]
+        [Authorize]
         public async Task<ActionResult<Account>> Get(String id)
         {
             var query = new GetAccountByIdQuery(id);
@@ -39,6 +42,7 @@ namespace Accounts.Service.Controllers
         
 
         [HttpPut("{id:length(24)}")]
+        [Authorize]
         public async Task<IActionResult> Update(string id, Account accountIn)
         {
             var command = new UpdateAccountCommand(id, accountIn);
@@ -54,6 +58,7 @@ namespace Accounts.Service.Controllers
         }
 
         [HttpDelete("{id:length(24)}")]
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             var command = new DeleteAccountCommand(id);

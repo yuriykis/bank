@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Transactions.Service.Authorization.Helpers;
 using Transactions.Service.Commands;
 using Transactions.Service.Models;
 using Transactions.Service.Queries.TransactionQueries;
@@ -26,6 +27,7 @@ namespace Transactions.Service.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Transaction>> Create([FromBody] CreateTransactionCommand command)
         {
             var result = await _mediator.Send(command);
@@ -33,6 +35,7 @@ namespace Transactions.Service.Controllers
         }
         
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<Transaction>>> Get()
         {
             var query = new GetAllTransactionsQuery();
@@ -41,6 +44,7 @@ namespace Transactions.Service.Controllers
         }
         
         [HttpGet(template: "{id}", Name = "GetTransaction")]
+        [Authorize]
         public async Task<ActionResult<Transaction>> Get(String id)
         {
             var query = new GetTransactionByIdQuery(id);
@@ -49,6 +53,7 @@ namespace Transactions.Service.Controllers
         }
 
         [HttpPut("{id:length(24)}")]
+        [Authorize]
         public async Task<IActionResult> Update(String id, [FromBody] Transaction transactionIn)
         {
             var command = new UpdateTransactionCommand(id, transactionIn);
@@ -65,6 +70,7 @@ namespace Transactions.Service.Controllers
         
 
         [HttpDelete("{id:length(24)}")]
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             var command = new DeleteTransactionCommand(id);

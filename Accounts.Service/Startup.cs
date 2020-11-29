@@ -1,3 +1,4 @@
+using Accounts.Service.Authorization.Helpers;
 using Accounts.Service.Messaging.Options;
 using Accounts.Service.Messaging.Receiver;
 using Accounts.Service.Models;
@@ -34,6 +35,7 @@ namespace Accounts.Service
             services.AddSingleton<IBankDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<BankDatabaseSettings>>().Value);
             
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddSingleton<AccountService>();
             services.AddMediatR(typeof(Startup));
             services.AddTransient<IAccountsAmountUpdateService, AccountsAmountUpdateService>();
@@ -63,7 +65,8 @@ namespace Accounts.Service
 
             app.UseCors("MyPolicy");
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
