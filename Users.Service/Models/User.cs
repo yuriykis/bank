@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
 
 namespace Users.Service.Models
 {
@@ -13,6 +14,7 @@ namespace Users.Service.Models
         public string Name { get; set; }
 
         [BsonElement("password")]
+        [JsonIgnore]
         public string Password { get; set; }
     }
 }

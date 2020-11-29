@@ -5,6 +5,8 @@ using MediatR;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Users.Service.Authorization.Helpers;
+using Users.Service.Authorization.Models;
 using Users.Service.Commands;
 using Users.Service.Models;
 using Users.Service.Queries;
@@ -24,6 +26,7 @@ namespace Users.Service.Controllers
         }
         
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<User>>> Get()
         {
             var query = new GetAllUsersQuery();
@@ -37,6 +40,26 @@ namespace Users.Service.Controllers
             var query = new GetUserByIdQuery(id);
             var result = await _mediator.Send(query);
             return result != null ? (ActionResult<User>) Ok(result) : NotFound();
+        }
+        
+        [HttpPost("authenticate")]
+        public async Task<ActionResult<AuthenticateResponse>> Authenticate(AuthenticateRequest request)
+        {
+            try
+            {
+                var command = new AuthenticateUserCommand
+                {
+                    Name = request.Name, 
+                    Password = request.Password
+                };
+                
+                var result = await _mediator.Send(command);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         

@@ -33,7 +33,7 @@ namespace Transactions.Service.Handlers
                 Amount = amount
             };
             
-            _transactionService.Create(newTransaction);
+            await _transactionService.Create(newTransaction);
             _transactionUpdateSender.SendTransaction(newTransaction);
             
             return newTransaction;

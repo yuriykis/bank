@@ -129,8 +129,20 @@
       <e p="Users.Service" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
+        <e p="Authorization" t="Include">
+          <e p="Helpers" t="Include">
+            <e p="AppSettings.cs" t="Include" />
+            <e p="AuthorizeAttribute.cs" t="Include" />
+            <e p="JwtMiddleware.cs" t="Include" />
+          </e>
+          <e p="Models" t="Include">
+            <e p="AuthenticateRequest.cs" t="Include" />
+            <e p="AuthenticateResponse.cs" t="Include" />
+          </e>
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Commands" t="Include">
+          <e p="AuthenticateUserCommand.cs" t="Include" />
           <e p="CreateUserCommand.cs" t="Include" />
           <e p="DeleteUserCommand.cs" t="Include" />
           <e p="UpdateUserCommand.cs" t="Include" />
@@ -140,6 +152,7 @@
         </e>
         <e p="Dockerfile" t="Include" />
         <e p="Handlers" t="Include">
+          <e p="AuthenticateUserHandler.cs" t="Include" />
           <e p="CreateUserHandler.cs" t="Include" />
           <e p="DeleteUserHandler.cs" t="Include" />
           <e p="GetAllUsersHandler.cs" t="Include" />

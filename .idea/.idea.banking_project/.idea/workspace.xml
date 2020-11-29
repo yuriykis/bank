@@ -27,23 +27,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Users.Service/Authorization/Helpers/AppSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.Service/Authorization/Helpers/AuthorizeAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.Service/Authorization/Helpers/JwtMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.Service/Commands/AuthenticateUserCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.Service/Handlers/AuthenticateUserHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAllAccountsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/GetAllAccountsHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Services/AccountsAmountUpdateService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Services/AccountsAmountUpdateService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,32 +57,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/3/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Users.Service/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/B/ConfigureServicesBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/15/MethodInfoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Users.Service/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C6663515-F1EC-4E78-BFF8-DF11F22F7BBE/3/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/156C0238-EF8C-47E3-80EA-18498A6CFBFF/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Users.Service/Commands/DeleteUserCommand.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Properties/launchSettings.json" />
-        <option value="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Dockerfile" />
-        <option value="$PROJECT_DIR$/Users.Service/Models/BankDatabaseSettings.cs" />
-        <option value="$PROJECT_DIR$/Accounts.Service/Models/BankDatabaseSettings.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Models/BankDatabaseSettings.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Commands/DeleteTransactionCommand.cs" />
-        <option value="$PROJECT_DIR$/api/Models/User.cs" />
-        <option value="$PROJECT_DIR$/api/Models/Account.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Commands/UpdateTransactionCommand.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Commands/UpdateAccountCommand.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Handlers/UpdateAccountHandler.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Models/Account.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Models/User.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Handlers/DeleteUserHandler.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Handlers/GetUserByIdHandler.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Handlers/UpdateUserHandler.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Commands/UpdateUserCommand.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Options.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/RabbitMqConfiguration.cs" />
@@ -102,10 +89,7 @@
         <option value="$PROJECT_DIR$/Transactions.Service/Startup.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Startup.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Services/AccountsAmountUpdateService.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Commands/CreateTransactionCommand.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" />
@@ -114,9 +98,28 @@
         <option value="$PROJECT_DIR$/Accounts.Service/Handlers/DeleteAccountHandler.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Handlers/GetAccountByIdHandler.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Handlers/GetAllAccountsHandler.cs" />
-        <option value="$PROJECT_DIR$/Users.Service/Services/UserService.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" />
         <option value="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Handlers/DeleteUserHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Handlers/GetAllUsersHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Handlers/GetUserByIdHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Handlers/UpdateUserHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Models/User.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateRequest.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Authorization/Helpers/AppSettings.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Authorization/Helpers/AuthorizeAttribute.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Startup.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateResponse.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Services/IUserService.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Services/UserService.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Commands/AuthenticateUserCommand.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Handlers/AuthenticateUserHandler.cs" />
+        <option value="$PROJECT_DIR$/Users.Service/Authorization/Helpers/JwtMiddleware.cs" />
       </list>
     </option>
   </component>
@@ -137,7 +140,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Transactions.Service: api">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Users.Service">
     <configuration name="Accounts.Service: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -316,7 +319,8 @@
       <workItem from="1606322694470" duration="18680000" />
       <workItem from="1606413064761" duration="13507000" />
       <workItem from="1606490948318" duration="13010000" />
-      <workItem from="1606558598907" duration="31502000" />
+      <workItem from="1606558598907" duration="32255000" />
+      <workItem from="1606644788965" duration="16540000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -353,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606599225144</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="make-all-methods-async">
+      <created>1606604781271</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606604781271</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,97 +391,98 @@
     <MESSAGE value="add-three-microservices" />
     <MESSAGE value="implement-rabbitmq-transactions-and-accounts-services" />
     <MESSAGE value="remove-old-api" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove-old-api" />
+    <MESSAGE value="make-all-methods-async" />
+    <option name="LAST_COMMIT_MESSAGE" value="make-all-methods-async" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606241031449">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1606241031449" />
-    <state width="459" height="464" key="DebuggerActiveHint" timestamp="1606598936901">
+    <state width="459" height="464" key="DebuggerActiveHint" timestamp="1606675028134">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="459" height="464" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1606598936901" />
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1606603701335">
+    <state width="459" height="464" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1606675028134" />
+    <state width="1493" height="129" key="GridCell.Tab.0.bottom" timestamp="1606675087520">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606603701335" />
-    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1606603701334">
+    <state width="1493" height="129" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606675087520" />
+    <state width="1493" height="129" key="GridCell.Tab.0.center" timestamp="1606675087519">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606603701334" />
-    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1606603701334">
+    <state width="1493" height="129" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606675087519" />
+    <state width="1493" height="129" key="GridCell.Tab.0.left" timestamp="1606675087519">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606603701334" />
-    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1606603701334">
+    <state width="1493" height="129" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606675087519" />
+    <state width="1493" height="129" key="GridCell.Tab.0.right" timestamp="1606675087520">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606603701334" />
-    <state width="1493" height="201" key="GridCell.Tab.1.bottom" timestamp="1606599144303">
+    <state width="1493" height="129" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606675087520" />
+    <state width="1493" height="99" key="GridCell.Tab.1.bottom" timestamp="1606675086009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.1.center" timestamp="1606599144303">
+    <state width="1493" height="99" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606675086009" />
+    <state width="1493" height="99" key="GridCell.Tab.1.center" timestamp="1606675086009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.1.left" timestamp="1606599144302">
+    <state width="1493" height="99" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1606675086009" />
+    <state width="1493" height="99" key="GridCell.Tab.1.left" timestamp="1606675086009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1606599144302" />
-    <state width="1493" height="201" key="GridCell.Tab.1.right" timestamp="1606599144303">
+    <state width="1493" height="99" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1606675086009" />
+    <state width="1493" height="99" key="GridCell.Tab.1.right" timestamp="1606675086009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.2.bottom" timestamp="1606599144303">
+    <state width="1493" height="99" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1606675086009" />
+    <state width="1493" height="99" key="GridCell.Tab.2.bottom" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.2.center" timestamp="1606599144303">
+    <state width="1493" height="99" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.2.center" timestamp="1606675086009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.2.left" timestamp="1606599144303">
+    <state width="1493" height="99" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1606675086009" />
+    <state width="1493" height="99" key="GridCell.Tab.2.left" timestamp="1606675086009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.2.right" timestamp="1606599144303">
+    <state width="1493" height="99" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1606675086009" />
+    <state width="1493" height="99" key="GridCell.Tab.2.right" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1606599144303" />
-    <state width="1493" height="201" key="GridCell.Tab.3.bottom" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.3.bottom" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
-    <state width="1493" height="201" key="GridCell.Tab.3.center" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.3.center" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
-    <state width="1493" height="201" key="GridCell.Tab.3.left" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.3.left" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
-    <state width="1493" height="201" key="GridCell.Tab.3.right" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.3.right" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
-    <state width="1493" height="201" key="GridCell.Tab.4.bottom" timestamp="1606599144305">
+    <state width="1493" height="99" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.4.bottom" timestamp="1606675086011">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606599144305" />
-    <state width="1493" height="201" key="GridCell.Tab.4.center" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606675086011" />
+    <state width="1493" height="99" key="GridCell.Tab.4.center" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
-    <state width="1493" height="201" key="GridCell.Tab.4.left" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.4.left" timestamp="1606675086010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
-    <state width="1493" height="201" key="GridCell.Tab.4.right" timestamp="1606599144304">
+    <state width="1493" height="99" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1606675086010" />
+    <state width="1493" height="99" key="GridCell.Tab.4.right" timestamp="1606675086011">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1606599144304" />
+    <state width="1493" height="99" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1606675086011" />
     <state width="189" height="455" key="HiddenNamespacesPopup" timestamp="1606241299605">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -479,14 +491,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size/0.0.1536.864@0.0.1536.864" timestamp="1606515308973" />
+    <state x="601" y="133" key="RiderGenerateDialog" timestamp="1606672499880">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="601" y="133" key="RiderGenerateDialog/0.0.1536.864@0.0.1536.864" timestamp="1606672499880" />
     <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606599237173">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606599237173" />
+    <state width="775" height="437" key="XDebugger.FullValuePopup" timestamp="1606675020007">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="775" height="437" key="XDebugger.FullValuePopup/0.0.1536.864@0.0.1536.864" timestamp="1606675020007" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606413469652">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606413469652" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1606672489746">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606672489746" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1606240934816">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
