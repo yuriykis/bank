@@ -27,50 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Accounts.Service/Persistance/PrimaryContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Persistance/PrimaryContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users.Service/Handlers/GeyUserByParamsHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users.Service/Persistance/PrimaryContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users.Service/Queries/GetUserByParamsQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Views/Shared/_DefaultFooterSection.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Views/Shared/_DefaultTopSection.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/dataSources/6caac942-0273-49bb-9803-b858aafa6375.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/UpdateAccountHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/UpdateAccountHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Models/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Models/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Models/BankDatabaseSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Services/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/TransactionUpdateSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/TransactionUpdateSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Models/BankDatabaseSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Transactions.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Transactions.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Authorization/Models/AuthenticateResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Commands/AuthenticateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Commands/AuthenticateUserCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Commands/CreateUserCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Handlers/AuthenticateUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Handlers/AuthenticateUserHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Handlers/CreateUserHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Models/BankDatabaseSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Users.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Users.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/web/web.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +315,7 @@
       <workItem from="1606768238924" duration="698000" />
       <workItem from="1606854080234" duration="6159000" />
       <workItem from="1606923810147" duration="4424000" />
-      <workItem from="1606929232112" duration="11685000" />
+      <workItem from="1606929232112" duration="12042000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -416,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606681665086</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="configure-entity-framework">
+      <created>1606941396810</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606941396810</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +410,8 @@
     <MESSAGE value="make-all-methods-async" />
     <MESSAGE value="add-authorization-to-users-service" />
     <MESSAGE value="add-authorization-to-all-services" />
-    <option name="LAST_COMMIT_MESSAGE" value="add-authorization-to-all-services" />
+    <MESSAGE value="configure-entity-framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="configure-entity-framework" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606929590903">
@@ -461,22 +426,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="576" height="464" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1606939234238" />
-    <state width="1493" height="91" key="GridCell.Tab.0.bottom" timestamp="1606941079751">
+    <state width="1493" height="297" key="GridCell.Tab.0.bottom" timestamp="1606941296090">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="91" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606941079751" />
-    <state width="1493" height="91" key="GridCell.Tab.0.center" timestamp="1606941079751">
+    <state width="1493" height="297" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
+    <state width="1493" height="297" key="GridCell.Tab.0.center" timestamp="1606941296090">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="91" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606941079751" />
-    <state width="1493" height="91" key="GridCell.Tab.0.left" timestamp="1606941079751">
+    <state width="1493" height="297" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
+    <state width="1493" height="297" key="GridCell.Tab.0.left" timestamp="1606941296090">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="91" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606941079751" />
-    <state width="1493" height="91" key="GridCell.Tab.0.right" timestamp="1606941079751">
+    <state width="1493" height="297" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
+    <state width="1493" height="297" key="GridCell.Tab.0.right" timestamp="1606941296090">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="91" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606941079751" />
+    <state width="1493" height="297" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
     <state width="1493" height="156" key="GridCell.Tab.1.bottom" timestamp="1606939315396">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -553,10 +518,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="601" y="133" key="RiderGenerateDialog/0.0.1536.864@0.0.1536.864" timestamp="1606934124596" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606681751709">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606941419287">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606681751709" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606941419287" />
     <state width="775" height="437" key="XDebugger.FullValuePopup" timestamp="1606675020007">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
