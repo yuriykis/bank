@@ -1,15 +1,18 @@
+using System.Linq;
+using System.Threading.Tasks;
 using Accounts.Service.Authorization.Helpers;
 using Accounts.Service.Messaging.Options;
 using Accounts.Service.Messaging.Receiver;
 using Accounts.Service.Models;
+using Accounts.Service.Persistance;
 using Accounts.Service.Services;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 
 namespace Accounts.Service
 {
@@ -29,14 +32,11 @@ namespace Accounts.Service
 
             services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
             
-            services.Configure<BankDatabaseSettings>(
-                Configuration.GetSection(nameof(BankDatabaseSettings)));
-
-            services.AddSingleton<IBankDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<BankDatabaseSettings>>().Value);
+            services.AddDbContext<PrimaryContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            services.AddSingleton<AccountService>();
+            services.AddScoped<AccountService>();
             services.AddMediatR(typeof(Startup));
             services.AddTransient<IAccountsAmountUpdateService, AccountsAmountUpdateService>();
             services.AddHostedService<AccountsAmountUpdateReceiver>();
@@ -68,10 +68,46 @@ namespace Accounts.Service
             // app.UseAuthorization();
             app.UseMiddleware<JwtMiddleware>();
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            InitializeAccounts(app).Wait();
+        }
+
+        private async Task InitializeAccounts(IApplicationBuilder app)
+        {
+            UpgradeDatabase(app);
+            using (var serviceScope = app.ApplicationServices.CreateScope())
             {
-                endpoints.MapControllers();
-            });
+                var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
+                if (context != null)
+                {
+                    await context.Database.EnsureCreatedAsync();
+                    if (!context.Accounts.Any())
+                    {
+                        var accounts = new Account[]
+                        {
+                            new Account {}
+                        };
+                        foreach (Account a in accounts)
+                        {
+                            await context.Accounts.AddAsync(a);
+                        }
+
+                        await context.SaveChangesAsync();
+                    }
+                }
+            }
+        }
+        
+        private void UpgradeDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
+                if (context != null && context.Database != null)
+                {
+                    context.Database.Migrate();
+                }
+            } 
         }
     }
 }

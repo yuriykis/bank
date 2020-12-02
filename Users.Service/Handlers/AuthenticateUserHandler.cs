@@ -21,7 +21,8 @@ namespace Users.Service.Handlers
         {
             var authenticateRequest = new AuthenticateRequest
             {
-                Name = request.Name, 
+                FirstName = request.FirstName, 
+                LastName = request.LastName,
                 Password = request.Password
             };
 

@@ -1,47 +1,55 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Accounts.Service.Models;
+using Accounts.Service.Persistance;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 
 namespace Accounts.Service.Services
 {
     public class AccountService
     {
-        private readonly IMongoCollection<Account> _accounts;
+        private readonly PrimaryContext _context;
 
-        public AccountService(IBankDatabaseSettings settings)
+        public AccountService(PrimaryContext context)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-
-            _accounts = database.GetCollection<Account>(settings.AccountsCollectionName);
+            _context = context;
         }
 
         public async Task<List<Account>> Get()
         {
-            var response = await _accounts.FindAsync(account => true);
-            return response.ToList();
+            return await _context.Accounts.ToListAsync();
         }
 
         public async Task<Account> Get(string id)
         {
-            var response = await _accounts.FindAsync(account => account.Id == id);
-            return response.FirstOrDefault();
+            return await _context.Accounts.FindAsync(id);
         }
 
         public async Task<Account> Create(Account account)
         {
-            await _accounts.InsertOneAsync(account);
+            await _context.Accounts.AddAsync(account);
+            await _context.SaveChangesAsync();
             return account;
         }
 
-        public async void Update(string id, Account accountIn) =>
-            await _accounts.ReplaceOneAsync(account => account.Id == id, accountIn);
+        public async void Update(string id, Account accountIn)
+        {
+            _context.Accounts.Update(accountIn);
+            await _context.SaveChangesAsync();
+        }
 
-        public async void Remove(Account accountIn) =>
-            await _accounts.DeleteOneAsync(account => account.Id == accountIn.Id);
+        public async void Remove(Account accountIn)
+        {
+            _context.Accounts.Remove(accountIn);
+            await _context.SaveChangesAsync();
+        }
 
-        public async void Remove(string id) =>
-            await _accounts.DeleteOneAsync(account => account.Id == id);
+        public async void Remove(string id)
+        {
+            var account = await  _context.Accounts.FindAsync(id);
+            _context.Accounts.Remove(account);
+            await _context.SaveChangesAsync();
+        }
     }
 }

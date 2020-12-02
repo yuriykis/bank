@@ -48,9 +48,13 @@ namespace Users.Service.Controllers
         {
             try
             {
+                var query = new GetUserByParamsQuery(request.FirstName, request.LastName, request.Password);
+                var res = await _mediator.Send(query);
+                
                 var command = new AuthenticateUserCommand
                 {
-                    Name = request.Name, 
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
                     Password = request.Password
                 };
                 

@@ -7,7 +7,9 @@ namespace Users.Service.Commands
 {
     public class AuthenticateUserCommand : IRequest<AuthenticateResponse>
     {
-        public String Name { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
         public String Password { get; set;}
     }
 }
