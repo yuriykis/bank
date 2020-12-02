@@ -1,34 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using Users.Service.Authorization.Helpers;
 using Users.Service.Authorization.Models;
 using Users.Service.Models;
+using Users.Service.Persistance;
 
 namespace Users.Service.Services
 {
     public class UserService
     {
-        private readonly IMongoCollection<User> _users;
-        private readonly AppSettings _appSettings;
-        public UserService(IBankDatabaseSettings settings, IOptions<AppSettings> appSettings)
-        {
-            _appSettings = appSettings.Value;
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
 
-            _users = database.GetCollection<User>(settings.UsersCollectionName);
+        private readonly AppSettings _appSettings;
+        private readonly PrimaryContext _context;
+        public UserService(IOptions<AppSettings> appSettings, PrimaryContext context)
+        {
+            _context = context;
+            _appSettings = appSettings.Value;
         }
         
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest model)
         {
-            var user = await this.Get(model.Name, model.Password);
+            var user = await this.Get(model.FirstName, model.LastName, model.Password);
             
             if (user == null) return null;
 
@@ -36,11 +39,7 @@ namespace Users.Service.Services
 
             return new AuthenticateResponse(user, token);
         }
-
-        public IMongoCollection<User> GetAll()
-        {
-            return _users;
-        }
+        
 
         private string GenerateJwtToken(User user)
         {
@@ -55,38 +54,48 @@ namespace Users.Service.Services
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
-
-        public async Task<List<User>> Get()
+        
+        public Task<List<User>> Get()
         {
-            var response = await _users.FindAsync(user => true);
-            return response.ToList();
+            return _context.Users.ToListAsync();
         }
-
+        
         public async Task<User> Get(string id)
         {
-            var response = await _users.FindAsync<User>(user => user.Id == id);
-            return response.FirstOrDefault();
+            return await _context.Users.FindAsync(id);
         }
 
-        public async Task<User> Get(string name, string password)
+        public async Task<User> Get(string firstName, string lastName, string password)
         {
-            var response = await _users.FindAsync(user => user.Name == name && user.Password == password);
-            return response.FirstOrDefault();
+            return await _context.Users.SingleOrDefaultAsync(
+                user => user.FirstName == firstName && user.LastName == lastName && user.Password == password
+                );
         }
 
         public async Task<User> Create(User user)
         {
-            await _users.InsertOneAsync(user);
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
             return user;
         }
 
-        public async void Update(string id, User userIn) =>
-            await _users.ReplaceOneAsync(user => user.Id == id, userIn);
+        public async void Update(string id, User userIn)
+        {
+            _context.Users.Update(userIn);
+            await _context.SaveChangesAsync();
+        }
 
-        public async void Remove(User userIn) =>
-            await _users.DeleteOneAsync(user => user.Id == userIn.Id);
+        public async void Remove(User userIn)
+        {
+            _context.Users.Remove(userIn);
+            await _context.SaveChangesAsync();
+        }
 
-        public async void Remove(string id) =>
-            await _users.DeleteOneAsync(user => user.Id == id);
+        public async void Remove(string id)
+        {
+            var user = await  _context.Users.FindAsync(id);
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }

@@ -17,12 +17,7 @@ namespace Accounts.Service.Handlers
 
         public async Task<bool> Handle(UpdateAccountCommand request, CancellationToken cancellationToken)
         {
-            var account = _accountService.Get(request.Id);
-
-            if (account == null)
-            {
-                return false;
-            }
+            var account = await _accountService.Get(request.Id);
 
             request.Account.Id = request.Id;
             _accountService.Update(request.Id, request.Account);

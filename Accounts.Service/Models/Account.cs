@@ -1,19 +1,14 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Accounts.Service.Models
 {
     public class Account
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
-
-        [BsonElement("amount")]
-        public long Amount { get; set; }
         
-        [BsonElement("user_id")]
-        [BsonRepresentation(BsonType.ObjectId)]
+        public long Amount { get; set; }
+
         public string UserId { get; set; }
     }
 }

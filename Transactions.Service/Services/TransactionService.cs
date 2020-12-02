@@ -1,47 +1,54 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using Transactions.Service.Models;
+using Transactions.Service.Persistance;
 
 namespace Transactions.Service.Services
 {
     public class TransactionService
     {
-        private readonly IMongoCollection<Transaction> _transactions;
-
-        public TransactionService(IBankDatabaseSettings settings)
+        private readonly PrimaryContext _context;
+        public TransactionService(PrimaryContext context)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-
-            _transactions = database.GetCollection<Transaction>(settings.TransactionsCollectionName);
+            _context = context;
         }
 
         public async Task<List<Transaction>> Get()
         {
-            var response = await _transactions.FindAsync<Transaction>(transaction => true);
-            return response.ToList();
+            return await _context.Transactions.ToListAsync();
         }
 
         public async Task<Transaction> Get(string id)
         {
-            var response = await _transactions.FindAsync<Transaction>(transaction => transaction.Id == id);
-            return response.FirstOrDefault();
+            return await _context.Transactions.FindAsync(id);
         }
 
         public async Task<Transaction> Create(Transaction transaction)
         {
-            await _transactions.InsertOneAsync(transaction);
+            await _context.Transactions.AddAsync(transaction);
+            await _context.SaveChangesAsync();
             return transaction;
         }
 
-        public async void Update(string id, Transaction transactionIn) =>
-            await _transactions.ReplaceOneAsync(transaction => transaction.Id == id, transactionIn);
+        public async void Update(string id, Transaction transactionIn)
+        {
+            _context.Transactions.Update(transactionIn);
+            await _context.SaveChangesAsync();
+        }
 
-        public async void Remove(Transaction transactionIn) =>
-            await _transactions.DeleteOneAsync(transaction => transaction.Id == transactionIn.Id);
+        public async void Remove(Transaction transactionIn)
+        {
+            _context.Transactions.Remove(transactionIn);
+            await _context.SaveChangesAsync();
+        }
 
-        public async void Remove(string id) =>
-            await _transactions.DeleteOneAsync(transaction => transaction.Id == id);
+        public async void Remove(string id)
+        {
+            var transaction = await  _context.Transactions.FindAsync(id);
+            _context.Transactions.Remove(transaction);
+            await _context.SaveChangesAsync();
+        }
     }
 }

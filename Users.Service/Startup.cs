@@ -1,12 +1,15 @@
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Users.Service.Authorization.Helpers;
 using Users.Service.Models;
+using Users.Service.Persistance;
 using Users.Service.Services;
 
 namespace Users.Service
@@ -23,14 +26,13 @@ namespace Users.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<BankDatabaseSettings>(
-                Configuration.GetSection(nameof(BankDatabaseSettings)));
-
-            services.AddSingleton<IBankDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<BankDatabaseSettings>>().Value);
             
+            services.AddDbContext<PrimaryContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            
+
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            services.AddSingleton<UserService>();
+            services.AddScoped<UserService>();
             services.AddMediatR(typeof(Startup));
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -64,6 +66,48 @@ namespace Users.Service
             {
                 endpoints.MapControllers();
             });
+            InitializeUsers(app).Wait();
         }
+        private async Task InitializeUsers(IApplicationBuilder app)
+        {
+            UpgradeDatabase(app);
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
+                if (context != null)
+                {
+                    await context.Database.EnsureCreatedAsync();
+                    if (!context.Users.Any())
+                    {
+                        var users = new User[]
+                        {
+                            new User {FirstName = "Yuriy", LastName = "Kis", Password = "password"},
+                            new User {FirstName = "Tomasz", LastName = "Kiełczewski", Password = "password"},
+                            new User {FirstName = "Jan", LastName = "Kowalski", Password = "password"},
+                            new User {FirstName = "Grzegorz", LastName = "Adamczewski", Password = "password"},
+                            new User {FirstName = "Krzysztof", LastName = "Nowak", Password = "password"}
+                        };
+                        foreach (User u in users)
+                        {
+                            await context.Users.AddAsync(u);
+                        }
+                        await context.SaveChangesAsync();
+                    }
+                }
+            }
+        }
+        
+        private void UpgradeDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
+                if (context != null && context.Database != null)
+                {
+                    context.Database.Migrate();
+                }
+            } 
+        }
+        
     }
 }

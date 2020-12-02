@@ -1,6 +1,9 @@
+using System.Linq;
+using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,6 +12,7 @@ using Transactions.Service.Authorization.Helpers;
 using Transactions.Service.Messaging.Options;
 using Transactions.Service.Messaging.Sender;
 using Transactions.Service.Models;
+using Transactions.Service.Persistance;
 using Transactions.Service.Services;
 
 namespace Transactions.Service
@@ -26,15 +30,12 @@ namespace Transactions.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
-            services.Configure<BankDatabaseSettings>(
-                Configuration.GetSection(nameof(BankDatabaseSettings)));
-
-            services.AddSingleton<IBankDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<BankDatabaseSettings>>().Value);
+            services.AddDbContext<PrimaryContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
             
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            services.AddSingleton<TransactionService>();
+            services.AddScoped<TransactionService>();
             services.AddTransient<ITransactionUpdateSender, TransactionUpdateSender>();
             services.AddMediatR(typeof(Startup));
 
@@ -69,6 +70,46 @@ namespace Transactions.Service
             {
                 endpoints.MapControllers();
             });
+
+            InitializeTransactions(app).Wait();
+        }
+
+        private async Task InitializeTransactions(IApplicationBuilder app)
+        {
+            UpgradeDatabase(app);
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
+                if (context != null)
+                {
+                    await context.Database.EnsureCreatedAsync();
+                    if (!context.Transactions.Any())
+                    {
+                        var transactions = new Transaction[]
+                        {
+                            new Transaction {ReciverAccountId = "1", SenderAccountId = "2", Amount = 200}
+                        };
+                        foreach (Transaction t in transactions)
+                        {
+                            await context.Transactions.AddAsync(t);
+                        }
+
+                        await context.SaveChangesAsync();
+                    }
+                }
+            }
+        }
+        
+        private void UpgradeDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
+                if (context != null && context.Database != null)
+                {
+                    context.Database.Migrate();
+                }
+            } 
         }
     }
 }

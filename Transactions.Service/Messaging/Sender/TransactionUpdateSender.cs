@@ -25,8 +25,8 @@ namespace Transactions.Service.Messaging.Sender
         public void SendTransaction(Transaction transaction)
         {
             var factory = new ConnectionFactory() { HostName = _hostname, UserName = _username, Password = _password };
-            
-            using (var connection = factory.CreateConnection())
+
+            using var connection = factory.CreateConnection();
             using (var channel = connection.CreateModel())
             {
                 channel.QueueDeclare(queue: _queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);

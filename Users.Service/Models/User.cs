@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
@@ -6,15 +7,12 @@ namespace Users.Service.Models
 {
     public class User
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
+        
+        public string FirstName { get; set; }
 
-        [BsonElement("name")]
-        public string Name { get; set; }
-
-        [BsonElement("password")]
-        [JsonIgnore]
+        public string LastName { get; set; }
         public string Password { get; set; }
     }
 }
