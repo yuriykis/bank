@@ -6,16 +6,13 @@ namespace Users.Service.Queries
 {
     public class GetUserByParamsQuery : IRequest<User>
     {
-        public GetUserByParamsQuery(string firstName, string lastName, string password)
+        public GetUserByParamsQuery(string username, string password)
         {
-            FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
+            Username = username ?? throw new ArgumentNullException(nameof(username));
             Password = password ?? throw new ArgumentNullException(nameof(password));
         }
 
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
     }
 }

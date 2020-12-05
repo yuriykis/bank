@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Users.Service.Models;
 
-namespace Users.Service.Persistance
+namespace Users.Service.Persistence
 {
     public class PrimaryContext : DbContext
     {

@@ -1,6 +1,3 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
 namespace Accounts.Service.Models
 {
     public class AccountUpdateModel

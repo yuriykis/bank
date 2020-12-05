@@ -5,7 +5,7 @@ using RabbitMQ.Client;
 using Users.Service.Messaging.Options;
 using Users.Service.Models;
 
-namespace Users.Service.Messaging.Sender
+namespace Users.Service.Messaging.Sender.Delete
 {
     public class UserAccountDeleteSender : IUserAccountDeleteSender
     {

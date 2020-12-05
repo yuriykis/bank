@@ -34,7 +34,7 @@ namespace Users.Service.Controllers
             return Ok(result);
         }
         
-        [HttpGet(template: "{id}", Name = "GetUser")]
+        [HttpGet(template: "{id}")]
         [Authorize]
         public async Task<ActionResult<User>> Get(String id)
         {
@@ -48,17 +48,20 @@ namespace Users.Service.Controllers
         {
             try
             {
-                var query = new GetUserByParamsQuery(request.FirstName, request.LastName, request.Password);
+                var query = new GetUserByParamsQuery(request.Username, request.Password);
                 var res = await _mediator.Send(query);
                 
                 var command = new AuthenticateUserCommand
                 {
-                    FirstName = request.FirstName,
-                    LastName = request.LastName,
+                    Username = request.Username,
                     Password = request.Password
                 };
                 
                 var result = await _mediator.Send(command);
+                if (result == null)
+                {
+                    return NotFound();
+                }
                 return result;
             }
             catch (Exception ex)

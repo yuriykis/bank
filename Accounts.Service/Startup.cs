@@ -50,6 +50,7 @@ namespace Accounts.Service
             services.AddTransient<IRequestHandler<UpdateAccountCommand, bool>, UpdateAccountHandler>();
             services.AddTransient<IRequestHandler<DeleteAccountCommand, bool>, DeleteAccountHandler>();
             services.AddTransient<IRequestHandler<GetAccountByUserIdQuery, Account>, GetAccountByUserIdHandler>();
+            services.AddTransient<IRequestHandler<CreateAccountCommand, Account>, CreateAccountHandler>();
             services.AddTransient<IAccountUpdateService, AccountUpdateService>();
             
             services.AddHostedService<AccountsAmountUpdateReceiver>();
@@ -100,7 +101,7 @@ namespace Accounts.Service
                         {
                             new Account {}
                         };
-                        foreach (Account a in accounts)
+                        foreach (var a in accounts)
                         {
                             await context.Accounts.AddAsync(a);
                         }

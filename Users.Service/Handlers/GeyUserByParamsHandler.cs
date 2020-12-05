@@ -18,7 +18,7 @@ namespace Users.Service.Handlers
 
         public async Task<User> Handle(GetUserByParamsQuery request, CancellationToken cancellationToken)
         {
-            return await _userService.Get(request.FirstName, request.LastName, request.Password);
+            return await _userService.Get(request.Username, request.Password);
         }
     }
 }

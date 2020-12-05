@@ -66,5 +66,22 @@ namespace Accounts.Service.Services
                 Debug.WriteLine(e.Message);
             }
         }
+
+        public async Task CreateAccount(AccountUpdateModel accountUpdateModel)
+        {
+            try
+            {
+                await _mediator.Send(new CreateAccountCommand
+                {
+                    Amount = 0,
+                    UserId = accountUpdateModel.UserId
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

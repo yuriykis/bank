@@ -10,8 +10,10 @@ using Microsoft.EntityFrameworkCore;
 using Users.Service.Authorization.Helpers;
 using Users.Service.Messaging.Options;
 using Users.Service.Messaging.Sender;
+using Users.Service.Messaging.Sender.Create;
+using Users.Service.Messaging.Sender.Delete;
 using Users.Service.Models;
-using Users.Service.Persistance;
+using Users.Service.Persistence;
 using Users.Service.Services;
 
 namespace Users.Service
@@ -37,6 +39,7 @@ namespace Users.Service
             services.AddScoped<UserService>();
             
             services.AddTransient<IUserAccountDeleteSender, UserAccountDeleteSender>();
+            services.AddTransient<IUserAccountCreateSender, UserAccountCreateSender>();
             services.AddMediatR(typeof(Startup));
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -85,11 +88,11 @@ namespace Users.Service
                     {
                         var users = new User[]
                         {
-                            new User {FirstName = "Yuriy", LastName = "Kis", Password = "password"},
-                            new User {FirstName = "Tomasz", LastName = "Kiełczewski", Password = "password"},
-                            new User {FirstName = "Jan", LastName = "Kowalski", Password = "password"},
-                            new User {FirstName = "Grzegorz", LastName = "Adamczewski", Password = "password"},
-                            new User {FirstName = "Krzysztof", LastName = "Nowak", Password = "password"}
+                            new User {Username = "ykis", FirstName = "Yuriy", LastName = "Kis", Password = "password"},
+                            new User {Username = "tkielczewski", FirstName = "Tomasz", LastName = "Kiełczewski", Password = "password"},
+                            new User {Username = "jkowalski", FirstName = "Jan", LastName = "Kowalski", Password = "password"},
+                            new User {Username = "gadamczewski", FirstName = "Grzegorz", LastName = "Adamczewski", Password = "password"},
+                            new User {Username = "knowak", FirstName = "Krzysztof", LastName = "Nowak", Password = "password"}
                         };
                         foreach (User u in users)
                         {

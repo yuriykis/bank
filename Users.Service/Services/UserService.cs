@@ -14,7 +14,7 @@ using MongoDB.Driver;
 using Users.Service.Authorization.Helpers;
 using Users.Service.Authorization.Models;
 using Users.Service.Models;
-using Users.Service.Persistance;
+using Users.Service.Persistence;
 
 namespace Users.Service.Services
 {
@@ -31,7 +31,7 @@ namespace Users.Service.Services
         
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest model)
         {
-            var user = await this.Get(model.FirstName, model.LastName, model.Password);
+            var user = await this.Get(model.Username, model.Password);
             
             if (user == null) return null;
 
@@ -65,10 +65,10 @@ namespace Users.Service.Services
             return await _context.Users.FindAsync(id);
         }
 
-        public async Task<User> Get(string firstName, string lastName, string password)
+        public async Task<User> Get(string username, string password)
         {
             return await _context.Users.SingleOrDefaultAsync(
-                user => user.FirstName == firstName && user.LastName == lastName && user.Password == password
+                user => user.Username == username && user.Password == password
                 );
         }
 

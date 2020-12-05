@@ -19,6 +19,7 @@
           </e>
         </e>
         <e p="Commands" t="Include">
+          <e p="CreateAccountCommand.cs" t="Include" />
           <e p="DeleteAccountCommand.cs" t="Include" />
           <e p="UpdateAccountCommand.cs" t="Include" />
         </e>
@@ -27,6 +28,7 @@
         </e>
         <e p="Dockerfile" t="Include" />
         <e p="Handlers" t="Include">
+          <e p="CreateAccountHandler.cs" t="Include" />
           <e p="DeleteAccountHandler.cs" t="Include" />
           <e p="GetAccountByIdHandler.cs" t="Include" />
           <e p="GetAccountByUserIdHandler.cs" t="Include" />
@@ -190,20 +192,26 @@
             <e p="RabbitMqConfiguration.cs" t="Include" />
           </e>
           <e p="Sender" t="Include">
-            <e p="IUserAccountDeleteSender.cs" t="Include" />
-            <e p="UserAccountDeleteSender.cs" t="Include" />
+            <e p="Create" t="Include">
+              <e p="IUserAccountCreateSender.cs" t="Include" />
+              <e p="UserAccountCreateSender.cs" t="Include" />
+            </e>
+            <e p="Delete" t="Include">
+              <e p="IUserAccountDeleteSender.cs" t="Include" />
+              <e p="UserAccountDeleteSender.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Migrations" t="Include">
-          <e p="20201202203525_InitialCreate.Designer.cs" t="Include" />
-          <e p="20201202203525_InitialCreate.cs" t="Include" />
+          <e p="20201205162517_InitialCreate.Designer.cs" t="Include" />
+          <e p="20201205162517_InitialCreate.cs" t="Include" />
           <e p="PrimaryContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="User.cs" t="Include" />
           <e p="UserMessageModel.cs" t="Include" />
         </e>
-        <e p="Persistance" t="Include">
+        <e p="Persistence" t="Include">
           <e p="PrimaryContext.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
@@ -240,25 +248,50 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="web" t="IncludeRecursive">
+        <e p="Authorization" t="Include">
+          <e p="Models" t="Include">
+            <e p="AuthenticateRequest.cs" t="Include" />
+            <e p="AuthenticateResponse.cs" t="Include" />
+          </e>
+        </e>
         <e p="Controllers" t="Include">
+          <e p="AuthenticationController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />
+        <e p="Domain" t="Include">
+          <e p="Entities" t="Include">
+            <e p="UserData.cs" t="Include" />
+            <e p="UserProfile.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Models" t="Include">
+          <e p="AccountModel.cs" t="Include" />
+          <e p="UserModel.cs" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Views" t="Include">
+          <e p="Authentication" t="Include">
+            <e p="Login.cshtml" t="Include" />
+          </e>
           <e p="Home" t="Include">
+            <e p="AccountView.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
             <e p="Error.cshtml.cs" t="Include" />
             <e p="Index.cshtml" t="Include" />
             <e p="Index.cshtml.cs" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
             <e p="Privacy.cshtml.cs" t="Include" />
+            <e p="Register.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
+            <e p="UserView" t="Include">
+              <e p="UserCard.cshtml" t="Include" />
+            </e>
             <e p="_DefaultFooterSection.cshtml" t="Include" />
             <e p="_DefaultTopSection.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
@@ -266,6 +299,12 @@
           </e>
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+        </e>
+        <e p="WebApi" t="Include">
+          <e p="AccountRequests.cs" t="Include" />
+          <e p="IAccountRequests.cs" t="Include" />
+          <e p="IUserRequests.cs" t="Include" />
+          <e p="UserRequests.cs" t="Include" />
         </e>
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />

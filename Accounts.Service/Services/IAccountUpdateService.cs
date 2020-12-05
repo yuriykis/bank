@@ -7,5 +7,7 @@ namespace Accounts.Service.Services
     {
         Task UpdateAccountsAmount(AccountUpdateModel accountsUpdateModel);
         Task DeleteAccount(AccountUpdateModel accountUpdateModel);
+
+        Task CreateAccount(AccountUpdateModel accountUpdateModel);
     }
 }

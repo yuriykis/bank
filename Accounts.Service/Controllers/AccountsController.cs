@@ -38,8 +38,22 @@ namespace Accounts.Service.Controllers
             var result = await _mediator.Send(query);
             return result != null ? (ActionResult<Account>) Ok(result) : NotFound();
         }
-        
-        
+
+        [HttpGet]
+        [Authorize]
+        [Route("user/{id}")]
+        public async Task<ActionResult<Account>> GetByUserId(string id)
+        {
+            var query = new GetAccountByUserIdQuery(id);
+            var result = await _mediator.Send(query);
+            return result != null ? (ActionResult<Account>) Ok(result) : NotFound();
+        }
+
+        [HttpPost]
+        public async Task<Account> Create(CreateAccountCommand command)
+        {
+            return await _mediator.Send(command);
+        }
 
         [HttpPut("{id}")]
         [Authorize]

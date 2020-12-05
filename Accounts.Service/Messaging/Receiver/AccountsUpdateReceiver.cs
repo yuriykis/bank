@@ -76,6 +76,10 @@ namespace Accounts.Service.Messaging.Receiver
             {
                 _accountUpdateService.DeleteAccount(accountUpdateModel);
             }
+            else if(accountUpdateModel.Message == "CreateAccount")
+            {
+                _accountUpdateService.CreateAccount(accountUpdateModel);
+            }
         }
         private void RabbitMQ_ConnectionShutdown(object sender, ShutdownEventArgs e)
         {

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using web.WebApi;
 
 namespace web
 {
@@ -26,7 +28,9 @@ namespace web
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUserRequests, UserRequests>();
+            services.AddScoped<IAccountRequests, AccountRequests>();
             services.AddRazorPages();
         }
 

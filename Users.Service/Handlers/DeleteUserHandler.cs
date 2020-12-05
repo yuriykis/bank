@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Users.Service.Commands;
 using Users.Service.Messaging.Sender;
+using Users.Service.Messaging.Sender.Delete;
 using Users.Service.Models;
 using Users.Service.Services;
 
@@ -32,9 +33,7 @@ namespace Users.Service.Handlers
             _userAccountDeleteSender.SendDeleteUserMessage(
                 new UserMessageModel
                 {
-                    Id = user.Id,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
+                    UserId = user.Id,
                     Message = "DeleteAccount"
                 });
             

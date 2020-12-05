@@ -21,13 +21,11 @@ namespace Users.Service.Handlers
         {
             var authenticateRequest = new AuthenticateRequest
             {
-                FirstName = request.FirstName, 
-                LastName = request.LastName,
+                Username = request.Username,
                 Password = request.Password
             };
 
             var response = await _userService.Authenticate(authenticateRequest);
-
             return response;
         }
     }
