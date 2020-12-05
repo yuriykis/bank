@@ -41,9 +41,9 @@ namespace Accounts.Service.Controllers
         
         
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> Update(string id, Account accountIn)
+        public async Task<IActionResult> Update(string id, [FromBody]Account accountIn)
         {
             var command = new UpdateAccountCommand(id, accountIn);
             var result = await _mediator.Send(command);
@@ -51,13 +51,11 @@ namespace Accounts.Service.Controllers
             {
                 return NoContent();
             }
-            else
-            {
-                return NotFound();
-            }
+
+            return NotFound();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id:length(50)}")]
         [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
@@ -67,10 +65,8 @@ namespace Accounts.Service.Controllers
             {
                 return NoContent();
             }
-            else
-            {
-                return NotFound();
-            }
+
+            return NotFound();
         }
     }
 }

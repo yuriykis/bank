@@ -2,19 +2,19 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
-using Transactions.Service.Messaging.Options;
-using Transactions.Service.Models;
+using Users.Service.Messaging.Options;
+using Users.Service.Models;
 
-namespace Transactions.Service.Messaging.Sender
+namespace Users.Service.Messaging.Sender
 {
-    public class TransactionUpdateSender : ITransactionUpdateSender
+    public class UserAccountDeleteSender : IUserAccountDeleteSender
     {
         private readonly string _hostname;
         private readonly string _queueName;
         private readonly string _username;
         private readonly string _password;
 
-        public TransactionUpdateSender(IOptions<RabbitMqConfiguration> rabbitMqOptions)
+        public UserAccountDeleteSender(IOptions<RabbitMqConfiguration> rabbitMqOptions)
         {
             _hostname = rabbitMqOptions.Value.Hostname;
             _queueName = rabbitMqOptions.Value.QueueName;
@@ -22,7 +22,7 @@ namespace Transactions.Service.Messaging.Sender
             _password = rabbitMqOptions.Value.Password;
         }
         
-        public void SendTransaction(TransactionMessageModel transaction)
+        public void SendDeleteUserMessage(UserMessageModel user)
         {
             var factory = new ConnectionFactory() { HostName = _hostname, UserName = _username, Password = _password };
 
@@ -31,7 +31,7 @@ namespace Transactions.Service.Messaging.Sender
             {
                 channel.QueueDeclare(queue: _queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
-                var json = JsonConvert.SerializeObject(transaction);
+                var json = JsonConvert.SerializeObject(user);
                 var body = Encoding.UTF8.GetBytes(json);
 
                 channel.BasicPublish(exchange: "", routingKey: _queueName, basicProperties: null, body: body);

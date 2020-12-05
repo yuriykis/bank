@@ -16,15 +16,15 @@ namespace Accounts.Service.Messaging.Receiver
     {
         private IModel _channel;
         private IConnection _connection;
-        private readonly IAccountsAmountUpdateService _accountsAmountUpdateService;
+        private readonly IAccountUpdateService _accountUpdateService;
         private readonly string _hostname;
         private readonly string _queueName;
         private readonly string _username;
         private readonly string _password;
 
-        public AccountsAmountUpdateReceiver(IAccountsAmountUpdateService accountsAmountUpdateService, IOptions<RabbitMqConfiguration> rabbitMqOptions)
+        public AccountsAmountUpdateReceiver(IAccountUpdateService accountUpdateService, IOptions<RabbitMqConfiguration> rabbitMqOptions)
         {
-            _accountsAmountUpdateService = accountsAmountUpdateService;
+            _accountUpdateService = accountUpdateService;
             _hostname = rabbitMqOptions.Value.Hostname;
             _queueName = rabbitMqOptions.Value.QueueName;
             _username = rabbitMqOptions.Value.UserName;
@@ -55,9 +55,9 @@ namespace Accounts.Service.Messaging.Receiver
             consumer.Received += (ch, ea) =>
             {
                 var content = Encoding.UTF8.GetString(ea.Body.ToArray());
-                var accountsAmountUpdateModel = JsonConvert.DeserializeObject<AccountsAmountUpdateModel>(content);
+                var accountUpdateModel = JsonConvert.DeserializeObject<AccountUpdateModel>(content);
 
-                HandleMessage(accountsAmountUpdateModel);
+                HandleMessage(accountUpdateModel);
 
                 _channel.BasicAck(ea.DeliveryTag, false);
             };
@@ -66,9 +66,16 @@ namespace Accounts.Service.Messaging.Receiver
 
             return Task.CompletedTask;
         }
-        private void HandleMessage(AccountsAmountUpdateModel accountsAmountUpdateModel)
+        private void HandleMessage(AccountUpdateModel accountUpdateModel)
         {
-            _accountsAmountUpdateService.UpdateAccountsAmount(accountsAmountUpdateModel);
+            if (accountUpdateModel.Message == "ExecuteTransaction")
+            {
+                _accountUpdateService.UpdateAccountsAmount(accountUpdateModel);
+            }
+            else if(accountUpdateModel.Message == "DeleteAccount")
+            {
+                _accountUpdateService.DeleteAccount(accountUpdateModel);
+            }
         }
         private void RabbitMQ_ConnectionShutdown(object sender, ShutdownEventArgs e)
         {

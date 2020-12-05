@@ -1,10 +1,15 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Accounts.Service.Authorization.Helpers;
+using Accounts.Service.Commands;
+using Accounts.Service.Handlers;
 using Accounts.Service.Messaging.Options;
 using Accounts.Service.Messaging.Receiver;
 using Accounts.Service.Models;
-using Accounts.Service.Persistance;
+using Accounts.Service.Persistence;
+using Accounts.Service.Queries;
 using Accounts.Service.Services;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -34,11 +39,19 @@ namespace Accounts.Service
             
             services.AddDbContext<PrimaryContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            
+                
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            
+            services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(IAccountUpdateService).Assembly);
+
             services.AddScoped<AccountService>();
-            services.AddMediatR(typeof(Startup));
-            services.AddTransient<IAccountsAmountUpdateService, AccountsAmountUpdateService>();
+            services.AddTransient<IRequestHandler<GetAccountByIdQuery, Account>, GetAccountByIdHandler>();
+            services.AddTransient<IRequestHandler<GetAllAccountsQuery, List<Account>>, GetAllAccountsHandler>();
+            services.AddTransient<IRequestHandler<UpdateAccountCommand, bool>, UpdateAccountHandler>();
+            services.AddTransient<IRequestHandler<DeleteAccountCommand, bool>, DeleteAccountHandler>();
+            services.AddTransient<IRequestHandler<GetAccountByUserIdQuery, Account>, GetAccountByUserIdHandler>();
+            services.AddTransient<IAccountUpdateService, AccountUpdateService>();
+            
             services.AddHostedService<AccountsAmountUpdateReceiver>();
             
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -103,10 +116,7 @@ namespace Accounts.Service
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<PrimaryContext>();
-                if (context != null && context.Database != null)
-                {
-                    context.Database.Migrate();
-                }
+                context?.Database?.Migrate();
             } 
         }
     }

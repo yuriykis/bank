@@ -4,6 +4,6 @@ namespace Transactions.Service.Messaging.Sender
 {
     public interface ITransactionUpdateSender
     {
-        void SendTransaction(Transaction transaction);
+        void SendTransaction(TransactionMessageModel transaction);
     }
 }

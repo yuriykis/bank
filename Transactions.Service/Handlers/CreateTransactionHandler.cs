@@ -29,12 +29,18 @@ namespace Transactions.Service.Handlers
             var newTransaction = new Transaction
             {
                 SenderAccountId = senderAccountId, 
-                ReciverAccountId = receiverAccountId, 
+                ReceiverAccountId = receiverAccountId, 
                 Amount = amount
             };
             
             await _transactionService.Create(newTransaction);
-            _transactionUpdateSender.SendTransaction(newTransaction);
+            _transactionUpdateSender.SendTransaction(new TransactionMessageModel
+            {
+                SenderAccountId = newTransaction.SenderAccountId,
+                ReceiverAccountId = newTransaction.ReceiverAccountId,
+                Amount = newTransaction.Amount,
+                Message = "ExecuteTransaction"
+            });
             
             return newTransaction;
         }

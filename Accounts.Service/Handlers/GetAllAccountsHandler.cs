@@ -5,20 +5,26 @@ using Accounts.Service.Models;
 using Accounts.Service.Queries;
 using Accounts.Service.Services;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Accounts.Service.Handlers
 {
     public class GetAllAccountsHandler : IRequestHandler<GetAllAccountsQuery, List<Account>>
     {
-        private readonly AccountService _accountService;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public GetAllAccountsHandler(AccountService accountService)
+        public GetAllAccountsHandler(IServiceScopeFactory serviceScopeFactory)
         {
-            _accountService = accountService;
+            _serviceScopeFactory = serviceScopeFactory;
         }
         public async Task<List<Account>> Handle(GetAllAccountsQuery request, CancellationToken cancellationToken)
         {
-            return await _accountService.Get();
+            using (var scope = _serviceScopeFactory.CreateScope())
+            {
+                var scopedServices = scope.ServiceProvider;
+                var accountService = scopedServices.GetRequiredService<AccountService>();
+                return await accountService.Get();
+            }
         }
     }
 }

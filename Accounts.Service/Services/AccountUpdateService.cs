@@ -8,32 +8,32 @@ using MediatR;
 
 namespace Accounts.Service.Services
 {
-    public class AccountsAmountUpdateService : IAccountsAmountUpdateService
+    public class AccountUpdateService : IAccountUpdateService
     {
         private readonly IMediator _mediator;
 
-        public AccountsAmountUpdateService(IMediator mediator)
+        public AccountUpdateService(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        public async Task UpdateAccountsAmount(AccountsAmountUpdateModel accountsAmountUpdateModel)
+        public async Task UpdateAccountsAmount(AccountUpdateModel accountUpdateModel)
         {
             try
             {
                 var senderAccount = await _mediator.Send(
-                    new GetAccountByIdQuery(accountsAmountUpdateModel.SenderAccountId)
+                    new GetAccountByIdQuery(accountUpdateModel.SenderAccountId)
                     );
                 var receiverAccount = await _mediator.Send(
-                    new GetAccountByIdQuery(accountsAmountUpdateModel.ReciverAccountId)
+                    new GetAccountByIdQuery(accountUpdateModel.ReceiverAccountId)
                     );
 
                 if (senderAccount != null && receiverAccount != null)
                 {
-                    if (senderAccount.Amount >= accountsAmountUpdateModel.Amount)
+                    if (senderAccount.Amount >= accountUpdateModel.Amount)
                     {
-                        senderAccount.Amount -= accountsAmountUpdateModel.Amount;
-                        receiverAccount.Amount += accountsAmountUpdateModel.Amount;
+                        senderAccount.Amount -= accountUpdateModel.Amount;
+                        receiverAccount.Amount += accountUpdateModel.Amount;
                     
                         await _mediator.Send(new UpdateAccountCommand(senderAccount.Id, senderAccount));
                         await _mediator.Send(new UpdateAccountCommand(receiverAccount.Id, receiverAccount));
@@ -48,6 +48,22 @@ namespace Accounts.Service.Services
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task DeleteAccount(AccountUpdateModel accountUpdateModel)
+        {
+            try
+            {
+                var accountToDelete = await _mediator.Send(
+                    new GetAccountByUserIdQuery(accountUpdateModel.UserId)
+                );
+                await _mediator.Send(
+                    new DeleteAccountCommand(accountToDelete.Id));
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
             }
         }
     }

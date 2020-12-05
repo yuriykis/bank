@@ -8,6 +8,8 @@ using Microsoft.Extensions.Hosting;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Users.Service.Authorization.Helpers;
+using Users.Service.Messaging.Options;
+using Users.Service.Messaging.Sender;
 using Users.Service.Models;
 using Users.Service.Persistance;
 using Users.Service.Services;
@@ -29,10 +31,12 @@ namespace Users.Service
             
             services.AddDbContext<PrimaryContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            
+            services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddScoped<UserService>();
+            
+            services.AddTransient<IUserAccountDeleteSender, UserAccountDeleteSender>();
             services.AddMediatR(typeof(Startup));
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>

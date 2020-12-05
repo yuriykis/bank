@@ -100,7 +100,7 @@ namespace Users.Service.Controllers
             }
         }
         
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(string id)
         {

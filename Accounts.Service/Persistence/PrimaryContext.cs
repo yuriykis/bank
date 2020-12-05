@@ -1,7 +1,7 @@
+using Accounts.Service.Models;
 using Microsoft.EntityFrameworkCore;
-using Transactions.Service.Models;
 
-namespace Transactions.Service.Persistance
+namespace Accounts.Service.Persistence
 {
     public class PrimaryContext : DbContext
     {
@@ -9,11 +9,11 @@ namespace Transactions.Service.Persistance
         {
         }
         
-        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Transaction>().ToTable("Transactions");
+            modelBuilder.Entity<Account>().ToTable("Accounts");
             base.OnModelCreating(modelBuilder);
         }
     }

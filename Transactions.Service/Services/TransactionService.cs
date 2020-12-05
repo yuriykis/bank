@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using Transactions.Service.Models;
-using Transactions.Service.Persistance;
+using Transactions.Service.Persistence;
 
 namespace Transactions.Service.Services
 {

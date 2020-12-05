@@ -12,7 +12,7 @@ using Transactions.Service.Authorization.Helpers;
 using Transactions.Service.Messaging.Options;
 using Transactions.Service.Messaging.Sender;
 using Transactions.Service.Models;
-using Transactions.Service.Persistance;
+using Transactions.Service.Persistence;
 using Transactions.Service.Services;
 
 namespace Transactions.Service
@@ -87,7 +87,7 @@ namespace Transactions.Service
                     {
                         var transactions = new Transaction[]
                         {
-                            new Transaction {ReciverAccountId = "1", SenderAccountId = "2", Amount = 200}
+                            new Transaction {ReceiverAccountId = "1", SenderAccountId = "2", Amount = 200}
                         };
                         foreach (Transaction t in transactions)
                         {
