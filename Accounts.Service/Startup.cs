@@ -7,6 +7,7 @@ using Accounts.Service.Commands;
 using Accounts.Service.Handlers;
 using Accounts.Service.Messaging.Options;
 using Accounts.Service.Messaging.Receiver;
+using Accounts.Service.Messaging.Sender;
 using Accounts.Service.Models;
 using Accounts.Service.Persistence;
 using Accounts.Service.Queries;
@@ -18,6 +19,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Accounts.Service
 {
@@ -45,6 +47,7 @@ namespace Accounts.Service
             services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(IAccountUpdateService).Assembly);
 
             services.AddScoped<AccountService>();
+            services.AddTransient<ITransactionUpdateSender, TransactionUpdateSender>();
             services.AddTransient<IRequestHandler<GetAccountByIdQuery, Account>, GetAccountByIdHandler>();
             services.AddTransient<IRequestHandler<GetAllAccountsQuery, List<Account>>, GetAllAccountsHandler>();
             services.AddTransient<IRequestHandler<UpdateAccountCommand, bool>, UpdateAccountHandler>();
@@ -61,7 +64,9 @@ namespace Accounts.Service
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
+            services.AddSwaggerGen( c => {
+                c.SwaggerDoc("v1", new OpenApiInfo());
+            }); 
             services.AddControllers();
         }
 
@@ -83,6 +88,11 @@ namespace Accounts.Service
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseSwagger();  
+            app.UseSwaggerUI(c =>  
+            {  
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Account Service API V1");
+            });  
             InitializeAccounts(app).Wait();
         }
 

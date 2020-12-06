@@ -77,7 +77,12 @@ namespace web.Controllers
                 Username = username,
                 Password = password
             });
-            
+
+            if (authenticateResponse == null)
+            {
+                TempData["message"] = "Login service is unavailable. Please try again later";
+                return RedirectToAction("login", "Authentication");
+            }
             if (authenticateResponse.Id == null || authenticateResponse.Token == null)
             {
                 TempData["message"] = "Data is incorrect. Please try again";

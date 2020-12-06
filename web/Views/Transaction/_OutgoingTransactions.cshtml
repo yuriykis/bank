@@ -1,0 +1,15 @@
+<div class="row justify-content-md-center">
+    <h3>Outgoing transactions</h3>
+</div>
+<div class="row justify-content-md-center">
+    <ul>
+        @foreach (var x in @Model.TransactionModelList)
+        {
+            <li>Receiver Account Id: @x.ReceiverAccountId</li>
+            <li>Amount: @x.Amount</li>
+            <li>Status: @x.Status</li>
+            <li>Info: @x.Info</li>
+            <hr/>
+        }
+    </ul>
+</div>

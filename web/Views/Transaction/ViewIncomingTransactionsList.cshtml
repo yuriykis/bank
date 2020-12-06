@@ -1,0 +1,16 @@
+@model web.Models.TransactionProfile
+
+@{
+    ViewBag.Title = "Bank";
+    Layout = "_Layout";
+}
+
+@{ await Html.RenderPartialAsync("_IncomingTransactions.cshtml"); }
+
+
+<div class="row justify-content-md-center">
+    @if (TempData["message"] != null)
+    {
+        <p style="color: red;">@TempData["message"]</p>
+    }
+</div>

@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using Transactions.Service.Commands;
 using Transactions.Service.Services;
 
@@ -8,26 +9,32 @@ namespace Transactions.Service.Handlers
 {
     public class UpdateTransactionHandler : IRequestHandler<UpdateTransactionCommand, bool>
     {
-        private readonly TransactionService _transactionService;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public UpdateTransactionHandler(TransactionService transactionService)
+        public UpdateTransactionHandler(IServiceScopeFactory serviceScopeFactory)
         {
-            _transactionService = transactionService;
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         public async Task<bool> Handle(UpdateTransactionCommand request, CancellationToken cancellationToken)
         {
-            var transaction = await _transactionService.Get(request.Id);
-
-            if (transaction == null)
+            using (var scope = _serviceScopeFactory.CreateScope())
             {
-                return false;
+                var scopedServices = scope.ServiceProvider;
+                var transactionService = scopedServices.GetRequiredService<TransactionService>();
+                
+                var transaction = await transactionService.Get(request.Id);
+
+                if (transaction == null)
+                {
+                    return false;
+                }
+
+                request.Transaction.Id = request.Id;
+                await transactionService.Update(request.Id, request.Transaction);
+
+                return true;
             }
-
-            request.Transaction.Id = request.Id;
-            _transactionService.Update(request.Id, request.Transaction);
-
-            return true;
         }
     }
 }

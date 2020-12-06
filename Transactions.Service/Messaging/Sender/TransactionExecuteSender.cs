@@ -7,14 +7,14 @@ using Transactions.Service.Models;
 
 namespace Transactions.Service.Messaging.Sender
 {
-    public class TransactionUpdateSender : ITransactionUpdateSender
+    public class TransactionExecuteSender : ITransactionExecuteSender
     {
         private readonly string _hostname;
         private readonly string _queueName;
         private readonly string _username;
         private readonly string _password;
 
-        public TransactionUpdateSender(IOptions<RabbitMqConfiguration> rabbitMqOptions)
+        public TransactionExecuteSender(IOptions<RabbitMqConfiguration> rabbitMqOptions)
         {
             _hostname = rabbitMqOptions.Value.Hostname;
             _queueName = rabbitMqOptions.Value.QueueName;

@@ -1404,13 +1404,13 @@ false posix/WET
 false posix/Zulu
 false posixrules
 </TimeZones>
-      <StartupTime>1607163461</StartupTime>
+      <StartupTime>1607247625</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
       <ObjectId>13067</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>795</IntrospectionStateNumber>
+      <IntrospectionStateNumber>853</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -1462,7 +1462,7 @@ false posixrules
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>796</IntrospectionStateNumber>
+      <IntrospectionStateNumber>854</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="15" parent="2" name="btree">
@@ -1530,10 +1530,10 @@ false posixrules
       <Owner>postgres</Owner>
       <StateNumber>629</StateNumber>
     </table>
-    <table id="27" parent="14" name="Transactions">
-      <ObjectId>24576</ObjectId>
+    <table id="27" parent="14" name="Users">
+      <ObjectId>32808</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>674</StateNumber>
+      <StateNumber>797</StateNumber>
     </table>
     <table id="28" parent="14" name="__EFMigrationsHistory">
       <ObjectId>16435</ObjectId>
@@ -1578,64 +1578,69 @@ false posixrules
       <Position>1</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>674</StateNumber>
+      <StateNumber>797</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="35" parent="27" name="SenderAccountId">
+    <column id="35" parent="27" name="Username">
       <Position>2</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>674</StateNumber>
+      <StateNumber>797</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="36" parent="27" name="ReceiverAccountId">
+    <column id="36" parent="27" name="FirstName">
       <Position>3</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>674</StateNumber>
+      <StateNumber>797</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="37" parent="27" name="Amount">
+    <column id="37" parent="27" name="LastName">
       <Position>4</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>674</StateNumber>
-      <TypeId>20</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>797</StateNumber>
+      <TypeId>25</TypeId>
     </column>
-    <index id="38" parent="27" name="PK_Transactions">
-      <ObjectId>24582</ObjectId>
-      <StateNumber>674</StateNumber>
+    <column id="38" parent="27" name="Password">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>797</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="39" parent="27" name="PK_Users">
+      <ObjectId>32814</ObjectId>
+      <StateNumber>797</StateNumber>
       <ColNames>Id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="39" parent="27" name="PK_Transactions">
-      <ObjectId>24583</ObjectId>
-      <StateNumber>674</StateNumber>
+    <key id="40" parent="27" name="PK_Users">
+      <ObjectId>32815</ObjectId>
+      <StateNumber>797</StateNumber>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PK_Transactions</UnderlyingIndexName>
+      <UnderlyingIndexName>PK_Users</UnderlyingIndexName>
     </key>
-    <column id="40" parent="28" name="MigrationId">
+    <column id="41" parent="28" name="MigrationId">
       <Position>1</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>622</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="28" name="ProductVersion">
+    <column id="42" parent="28" name="ProductVersion">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>622</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="42" parent="28" name="PK___EFMigrationsHistory">
+    <index id="43" parent="28" name="PK___EFMigrationsHistory">
       <ObjectId>16438</ObjectId>
       <StateNumber>622</StateNumber>
       <ColNames>MigrationId</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="43" parent="28" name="PK___EFMigrationsHistory">
+    <key id="44" parent="28" name="PK___EFMigrationsHistory">
       <ObjectId>16439</ObjectId>
       <StateNumber>622</StateNumber>
       <ColNames>MigrationId</ColNames>

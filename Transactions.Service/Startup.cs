@@ -8,8 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Transactions.Service.Authorization.Helpers;
 using Transactions.Service.Messaging.Options;
+using Transactions.Service.Messaging.Receiver;
 using Transactions.Service.Messaging.Sender;
 using Transactions.Service.Models;
 using Transactions.Service.Persistence;
@@ -31,22 +33,30 @@ namespace Transactions.Service
         {
             services.AddOptions();
             services.AddDbContext<PrimaryContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            {
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
             services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
             
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddScoped<TransactionService>();
-            services.AddTransient<ITransactionUpdateSender, TransactionUpdateSender>();
+            services.AddTransient<ITransactionExecuteSender, TransactionExecuteSender>();
             services.AddMediatR(typeof(Startup));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
+            services.AddTransient<ITransactionUpdateService, TransactionUpdateService>();
+            
+            services.AddHostedService<TransactionUpdateReceiver>();
+            
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
+            services.AddSwaggerGen( c => {
+                c.SwaggerDoc("v1", new OpenApiInfo());
+            }); 
             services.AddControllers();
         }
 
@@ -71,7 +81,11 @@ namespace Transactions.Service
             {
                 endpoints.MapControllers();
             });
-
+            app.UseSwagger();  
+            app.UseSwaggerUI(c =>  
+            {  
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transactions Service API V1");
+            });  
             InitializeTransactions(app).Wait();
         }
 

@@ -2,6 +2,7 @@ namespace Transactions.Service.Models
 {
     public class TransactionMessageModel
     {
+        public string TransactionId { get; set; }
         public string UserId { get; set; }
         public string SenderAccountId { get; set; }
         
@@ -10,5 +11,6 @@ namespace Transactions.Service.Models
         public long Amount { get; set; }
 
         public string Message { get; set; }
+
     }
 }

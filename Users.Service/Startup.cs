@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Users.Service.Authorization.Helpers;
 using Users.Service.Messaging.Options;
 using Users.Service.Messaging.Sender;
@@ -48,7 +52,9 @@ namespace Users.Service
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
+            services.AddSwaggerGen( c => {
+                c.SwaggerDoc("v1", new OpenApiInfo());
+            }); 
             services.AddControllers();
         }
 
@@ -73,6 +79,11 @@ namespace Users.Service
             {
                 endpoints.MapControllers();
             });
+            app.UseSwagger();  
+            app.UseSwaggerUI(c =>  
+            {  
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Users Service API V1");
+            });  
             InitializeUsers(app).Wait();
         }
         private async Task InitializeUsers(IApplicationBuilder app)

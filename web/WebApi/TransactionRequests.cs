@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -34,6 +35,48 @@ namespace web.WebApi
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public async Task<List<TransactionModel>> GetTransactionBySenderList(string token, string accountId)
+        {
+            var path = "api/transactions/account_sender/";
+            var requestUrl = TransactionServiceHost + path + accountId;
+            
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer",token);
+                
+                var responseMessage = await _httpClient.GetAsync(requestUrl);
+                var content = responseMessage.Content;
+                var response = await content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<TransactionModel>>(response);
+            }
+            catch (HttpRequestException exception)
+            {
+                return null;
+            }
+        }
+
+        public async Task<List<TransactionModel>> GetTransactionByReceiverList(string token, string accountId)
+        {
+            var path = "api/transactions/account_receiver/";
+            var requestUrl = TransactionServiceHost + path + accountId;
+            
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer",token);
+                
+                var responseMessage = await _httpClient.GetAsync(requestUrl);
+                var content = responseMessage.Content;
+                var response = await content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<TransactionModel>>(response);
+            }
+            catch (HttpRequestException exception)
+            {
+                return null;
             }
         }
     }

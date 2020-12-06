@@ -44,6 +44,12 @@
             </div>
         </div>
     </div>
+    <div class="col">
+    			@if (TempData["message"] != null)
+                		{
+                			<p style="color: red;">@TempData["message"]</p>
+                		}
+    		</div>
 </div>    
 </div>
 

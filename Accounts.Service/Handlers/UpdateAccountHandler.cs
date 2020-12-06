@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Accounts.Service.Commands;
+using Accounts.Service.Messaging.Sender;
 using Accounts.Service.Services;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +26,7 @@ namespace Accounts.Service.Handlers
 
                 request.Account.Id = request.Id;
                 await accountService.Update(request.Id, request.Account);
-
+                
                 return true;
             }
         }

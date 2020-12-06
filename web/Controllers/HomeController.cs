@@ -75,11 +75,26 @@ namespace web.Controllers
             var userModel =  await _userRequests.GetUserData(token, userId);
             var accountModel = await _accountRequests.GetUserAccountData(token, userId);
 
-            profile.UserData.Username = userModel.Username;
-            profile.UserData.FirstName = userModel.FirstName;
-            profile.UserData.LastName = userModel.LastName;
-            profile.UserData.Amount = Int32.Parse(accountModel.Amount);
-            
+            if (userModel == null)
+            {
+                TempData["message"] = "Could not get user data. User service is probably unavailable";
+            }
+            else
+            {
+                profile.UserData.Username = userModel.Username;
+                profile.UserData.FirstName = userModel.FirstName;
+                profile.UserData.LastName = userModel.LastName;
+            }
+
+            if (accountModel == null)
+            {
+                TempData["message"] = "Could not get account data. Account service is probably unavailable";
+            }
+            else
+            {
+                profile.UserData.Amount = Int32.Parse(accountModel.Amount);
+            }
+
             return View(profile);
         }
 
@@ -113,7 +128,7 @@ namespace web.Controllers
                 TempData["message"] = "The account has been successfully created";
                 return RedirectToAction("");
             }
-            TempData["message"] = "Account creation failed";
+            TempData["message"] = "Account creation failed. Please try again later";
             return RedirectToAction("register");
         }
         

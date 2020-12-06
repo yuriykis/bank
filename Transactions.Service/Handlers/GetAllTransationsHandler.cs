@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using Transactions.Service.Models;
 using Transactions.Service.Queries.TransactionQueries;
 using Transactions.Service.Services;
@@ -10,16 +11,23 @@ namespace Transactions.Service.Handlers
 {
     public class GetAllTransactionsHandler : IRequestHandler<GetAllTransactionsQuery, List<Transaction>>
     {
-        private readonly TransactionService _transactionService;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public GetAllTransactionsHandler(TransactionService transactionService)
+        public GetAllTransactionsHandler(IServiceScopeFactory serviceScopeFactory)
         {
-            _transactionService = transactionService;
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         public async Task<List<Transaction>> Handle(GetAllTransactionsQuery request, CancellationToken cancellationToken)
         {
-            return await _transactionService.Get();
+            using (var scope = _serviceScopeFactory.CreateScope())
+            {
+                var scopedServices = scope.ServiceProvider;
+                var transactionService = scopedServices.GetRequiredService<TransactionService>();
+                
+                return await transactionService.Get();
+            }
+            
         }
     }
 }

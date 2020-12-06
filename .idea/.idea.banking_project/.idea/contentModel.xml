@@ -42,6 +42,10 @@
           <e p="Receiver" t="Include">
             <e p="AccountsUpdateReceiver.cs" t="Include" />
           </e>
+          <e p="Sender" t="Include">
+            <e p="ITransactionUpdateSender.cs" t="Include" />
+            <e p="TransactionUpdateSender.cs" t="Include" />
+          </e>
         </e>
         <e p="Migrations" t="Include">
           <e p="20201202202613_InitialCreate.Designer.cs" t="Include" />
@@ -51,6 +55,7 @@
         <e p="Models" t="Include">
           <e p="Account.cs" t="Include" />
           <e p="AccountUpdateModel.cs" t="Include" />
+          <e p="TransactionMessageModel.cs" t="Include" />
         </e>
         <e p="Persistence" t="Include">
           <e p="PrimaryContext.cs" t="Include" />
@@ -107,25 +112,31 @@
           <e p="DeleteTransactionHandler.cs" t="Include" />
           <e p="GetAllTransationsHandler.cs" t="Include" />
           <e p="GetTransactionByIdHandler.cs" t="Include" />
+          <e p="GetTransactionsByAccountReceiverIdHandler.cs" t="Include" />
+          <e p="GetTransactionsByAccountSenderIdHandler.cs" t="Include" />
           <e p="UpdateTransactionHandler.cs" t="Include" />
         </e>
         <e p="Messaging" t="Include">
           <e p="Options" t="Include">
             <e p="RabbitMqConfiguration.cs" t="Include" />
           </e>
+          <e p="Receiver" t="Include">
+            <e p="TransactionUpdateReceiver.cs" t="Include" />
+          </e>
           <e p="Sender" t="Include">
-            <e p="ITransactionUpdateSender.cs" t="Include" />
-            <e p="TransactionUpdateSender.cs" t="Include" />
+            <e p="ITransactionExecuteSender.cs" t="Include" />
+            <e p="TransactionExecuteSender.cs" t="Include" />
           </e>
         </e>
         <e p="Migrations" t="Include">
-          <e p="20201202200720_InitialCreate.Designer.cs" t="Include" />
-          <e p="20201202200720_InitialCreate.cs" t="Include" />
+          <e p="20201206151313_InitialCreate.Designer.cs" t="Include" />
+          <e p="20201206151313_InitialCreate.cs" t="Include" />
           <e p="PrimaryContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Transaction.cs" t="Include" />
           <e p="TransactionMessageModel.cs" t="Include" />
+          <e p="TransactionUpdateModel.cs" t="Include" />
         </e>
         <e p="Persistence" t="Include">
           <e p="PrimaryContext.cs" t="Include" />
@@ -138,10 +149,14 @@
           <e p="TransactionQueries" t="Include">
             <e p="GetAllTransactionsQuery.cs" t="Include" />
             <e p="GetTransactionByIdQuery.cs" t="Include" />
+            <e p="GetTransactionsByAccountReceiverIdQuery.cs" t="Include" />
+            <e p="GetTransactionsByAccountSenderIdQuery.cs" t="Include" />
           </e>
         </e>
         <e p="Services" t="Include">
+          <e p="ITransactionUpdateService.cs" t="Include" />
           <e p="TransactionService.cs" t="Include" />
+          <e p="TransactionUpdateService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Transactions.Service.csproj" t="IncludeRecursive" />
@@ -269,6 +284,7 @@
         <e p="Models" t="Include">
           <e p="AccountModel.cs" t="Include" />
           <e p="TransactionModel.cs" t="Include" />
+          <e p="TransactionProfile.cs" t="Include" />
           <e p="UserModel.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
@@ -301,6 +317,10 @@
           </e>
           <e p="Transaction" t="Include">
             <e p="CompleteTransaction.cshtml" t="Include" />
+            <e p="ViewIncomingTransactionsList.cshtml" t="Include" />
+            <e p="ViewOutgoingTransactionsList.cshtml" t="Include" />
+            <e p="_IncomingTransactions.cshtml" t="Include" />
+            <e p="_OutgoingTransactions.cshtml" t="Include" />
           </e>
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />

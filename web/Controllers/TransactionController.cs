@@ -92,5 +92,79 @@ namespace web.Controllers
             return RedirectToAction("CompleteTransaction");
         }
 
+        
+        [HttpGet]
+        [Route("out_transaction_list")]
+        public async Task<IActionResult> ViewOutgoingTransactionsList()
+        {
+            if (!_isUserAuthorized)
+            {
+                return RedirectToAction("login", "Authentication", new {area = ""});
+            }
+            
+            var profile = new TransactionProfile();
+            var token = GetCookie("Token");
+            var userId = GetCookie("UserId");
+            var account = await _accountRequests.GetUserAccountData(token, userId);
+                
+            var transactionModelList = await _transactionRequests.GetTransactionBySenderList(token, account.Id);
+            
+            if (transactionModelList == null)
+            {
+                TempData["message"] = "Could not get user data. User service is probably unavailable";
+            }
+            else
+            {
+                foreach (var transactionModel in transactionModelList)
+                {
+                    profile.TransactionModelList.Add(new TransactionModel
+                    {
+                        ReceiverAccountId = transactionModel.ReceiverAccountId,
+                        Amount = transactionModel.Amount,
+                        Status = transactionModel.Status,
+                        Info = transactionModel.Info
+                    });
+                }
+            }
+
+            return View(profile);
+        }
+        
+        [HttpGet]
+        [Route("in_transaction_list")]
+        public async Task<IActionResult> ViewIncomingTransactionsList()
+        {
+            if (!_isUserAuthorized)
+            {
+                return RedirectToAction("login", "Authentication", new {area = ""});
+            }
+            
+            var profile = new TransactionProfile();
+            var token = GetCookie("Token");
+            var userId = GetCookie("UserId");
+            var account = await _accountRequests.GetUserAccountData(token, userId);
+                
+            var transactionModelList = await _transactionRequests.GetTransactionByReceiverList(token, account.Id);
+            
+            if (transactionModelList == null)
+            {
+                TempData["message"] = "Could not get user data. User service is probably unavailable";
+            }
+            else
+            {
+                foreach (var transactionModel in transactionModelList)
+                {
+                    profile.TransactionModelList.Add(new TransactionModel
+                    {
+                        SenderAccountId = transactionModel.SenderAccountId,
+                        Amount = transactionModel.Amount,
+                        Status = transactionModel.Status,
+                        Info = transactionModel.Info
+                    });
+                }
+            }
+
+            return View(profile);
+        }
     }
 }

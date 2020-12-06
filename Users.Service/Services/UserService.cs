@@ -87,19 +87,19 @@ namespace Users.Service.Services
             return user;
         }
 
-        public async void Update(string id, User userIn)
+        public async Task Update(string id, User userIn)
         {
             _context.Users.Update(userIn);
             await _context.SaveChangesAsync();
         }
 
-        public async void Remove(User userIn)
+        public async Task Remove(User userIn)
         {
             _context.Users.Remove(userIn);
             await _context.SaveChangesAsync();
         }
 
-        public async void Remove(string id)
+        public async Task Remove(string id)
         {
             var user = await  _context.Users.FindAsync(id);
             _context.Users.Remove(user);

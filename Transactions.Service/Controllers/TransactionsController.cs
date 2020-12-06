@@ -87,6 +87,24 @@ namespace Transactions.Service.Controllers
             }
         }
 
+        [HttpGet(template: "account_sender/{accountId}")]
+        [Authorize]
+        public async Task<ActionResult<List<Transaction>>> GetByAccountSenderId(string accountId)
+        {
+            var query = new GetTransactionsByAccountSenderIdQuery(accountId);
+            _logger.LogInformation("Get transactions by sender id " + accountId + " request");
+            return await _mediator.Send(query);
+        }
+        
+        [HttpGet(template: "account_receiver/{accountId}")]
+        [Authorize]
+        public async Task<ActionResult<List<Transaction>>> GetByAccountReceiverId(string accountId)
+        {
+            var query = new GetTransactionsByAccountReceiverIdQuery(accountId);
+            _logger.LogInformation("Get transactions by sender id " + accountId + " request");
+            return await _mediator.Send(query);
+        }
+
         [HttpPut("{id:length(24)}")]
         [Authorize]
         public async Task<IActionResult> Update(String id, [FromBody] Transaction transactionIn)
