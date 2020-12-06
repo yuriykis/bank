@@ -26,62 +26,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose_old.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger.turtle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/WiredTigerHS.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/_mdb_catalog.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/collection-0-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/collection-11-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/collection-2-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/collection-4-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/collection-7-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/collection-9-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-04T13-11-14Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-08T11-15-01Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T20-40-47Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T20-51-10Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-01-19Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-07-39Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-11-02Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-14-32Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-18-00Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-28-11Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-30-21Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-34-06Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-37-37Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-42-36Z-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-1-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-10-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-12-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-3-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-5-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-6-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/index-8-7880648780947102764.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/journal/WiredTigerLog.0000000014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/journal/WiredTigerPreplog.0000000001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/journal/WiredTigerPreplog.0000000002" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mongod.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/sizeStorer.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/storage.bson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo-init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo_script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/appsettings.json" afterDir="false" />
-    </list>
+    <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,14 +108,14 @@
         <option value="$PROJECT_DIR$/Transactions.Service/Dockerfile" />
         <option value="$PROJECT_DIR$/Users.Service/Dockerfile" />
         <option value="$PROJECT_DIR$/web/appsettings.json" />
-        <option value="$PROJECT_DIR$/web/WebApi/UserRequests.cs" />
-        <option value="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" />
-        <option value="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Dockerfile" />
         <option value="$PROJECT_DIR$/Accounts.Service/appsettings.json" />
         <option value="$PROJECT_DIR$/Transactions.Service/appsettings.json" />
         <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" />
+        <option value="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" />
+        <option value="$PROJECT_DIR$/web/WebApi/UserRequests.cs" />
       </list>
     </option>
   </component>
@@ -390,7 +335,7 @@
       <workItem from="1607166861596" duration="31009000" />
       <workItem from="1607201430877" duration="9931000" />
       <workItem from="1607213779879" duration="954000" />
-      <workItem from="1607252274558" duration="29417000" />
+      <workItem from="1607252274558" duration="29773000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -490,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607288278250</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="new-docker-conf">
+      <created>1607292316980</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1607292316980</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +478,8 @@
     <MESSAGE value="fix-transaction-security" />
     <MESSAGE value="configure-logger" />
     <MESSAGE value="send-rabbitmq-from-transaction-and-list-transactions-on-front" />
-    <option name="LAST_COMMIT_MESSAGE" value="send-rabbitmq-from-transaction-and-list-transactions-on-front" />
+    <MESSAGE value="new-docker-conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="new-docker-conf" />
   </component>
   <component name="WindowStateProjectService">
     <state x="666" y="378" width="588" height="361" key="#Notifications" timestamp="1607172036499">
@@ -672,11 +625,11 @@
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="100" y="129" width="1730" height="856" key="VCS.FileHistoryDialog/0.29.1920.1051@0.29.1920.1051" timestamp="1607255455286" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607288283314">
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607292323813">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606941419287" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607288283314" />
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607292323813" />
     <state width="775" height="437" key="XDebugger.FullValuePopup" timestamp="1606675020007">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
