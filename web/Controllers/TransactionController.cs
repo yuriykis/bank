@@ -111,7 +111,7 @@ namespace web.Controllers
             
             if (transactionModelList == null)
             {
-                TempData["message"] = "Could not get user data. User service is probably unavailable";
+                TempData["message"] = "Could not get transaction data. Transaction service is probably unavailable";
             }
             else
             {
@@ -148,7 +148,7 @@ namespace web.Controllers
             
             if (transactionModelList == null)
             {
-                TempData["message"] = "Could not get user data. User service is probably unavailable";
+                TempData["message"] = "Could not get transaction data. Transaction service is probably unavailable";
             }
             else
             {
