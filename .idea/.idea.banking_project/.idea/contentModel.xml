@@ -257,6 +257,7 @@
         <e p="Controllers" t="Include">
           <e p="AuthenticationController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="TransactionController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />
         <e p="Domain" t="Include">
@@ -267,6 +268,7 @@
         </e>
         <e p="Models" t="Include">
           <e p="AccountModel.cs" t="Include" />
+          <e p="TransactionModel.cs" t="Include" />
           <e p="UserModel.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
@@ -297,13 +299,18 @@
             <e p="_Layout.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
           </e>
+          <e p="Transaction" t="Include">
+            <e p="CompleteTransaction.cshtml" t="Include" />
+          </e>
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
         </e>
         <e p="WebApi" t="Include">
           <e p="AccountRequests.cs" t="Include" />
           <e p="IAccountRequests.cs" t="Include" />
+          <e p="ITransactionRequests.cs" t="Include" />
           <e p="IUserRequests.cs" t="Include" />
+          <e p="TransactionRequests.cs" t="Include" />
           <e p="UserRequests.cs" t="Include" />
         </e>
         <e p="appsettings.Development.json" t="Include" />

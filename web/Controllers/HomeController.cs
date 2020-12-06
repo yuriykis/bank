@@ -45,12 +45,18 @@ namespace web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (!_isUserAuthorized)
+            {
+                return RedirectToAction("login", "Authentication", new {area = ""});
+            }
+            
+            return RedirectToAction("AccountView");
         }
 
         [ActionName("privacy")]
         public IActionResult Privacy()
         {
+
             return View();
         }
         
@@ -81,6 +87,11 @@ namespace web.Controllers
         [Route("register")]
         public IActionResult Register()
         {
+            if (_isUserAuthorized)
+            {
+                return RedirectToAction("");
+            }
+            
             return View();
         }
         
@@ -105,5 +116,6 @@ namespace web.Controllers
             TempData["message"] = "Account creation failed";
             return RedirectToAction("register");
         }
+        
     }
 }

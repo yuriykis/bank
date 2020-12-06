@@ -17,37 +17,48 @@ namespace Accounts.Service.Services
             _mediator = mediator;
         }
 
+        private async Task<bool> IsTransactionPermitted(AccountUpdateModel accountUpdateModel)
+        {
+            var senderAccountByUserId = await _mediator.Send(
+                new GetAccountByUserIdQuery(accountUpdateModel.UserId));
+            var senderAccountBySenderId = await _mediator.Send(
+                new GetAccountByIdQuery(accountUpdateModel.SenderAccountId));
+            return senderAccountByUserId.Id == senderAccountBySenderId.Id;
+        }
         public async Task UpdateAccountsAmount(AccountUpdateModel accountUpdateModel)
         {
-            try
+            if (await IsTransactionPermitted(accountUpdateModel))
             {
-                var senderAccount = await _mediator.Send(
-                    new GetAccountByIdQuery(accountUpdateModel.SenderAccountId)
+                try
+                {
+                    var senderAccount = await _mediator.Send(
+                        new GetAccountByIdQuery(accountUpdateModel.SenderAccountId)
                     );
-                var receiverAccount = await _mediator.Send(
-                    new GetAccountByIdQuery(accountUpdateModel.ReceiverAccountId)
+                    var receiverAccount = await _mediator.Send(
+                        new GetAccountByIdQuery(accountUpdateModel.ReceiverAccountId)
                     );
 
-                if (senderAccount != null && receiverAccount != null)
-                {
-                    if (senderAccount.Amount >= accountUpdateModel.Amount)
+                    if (senderAccount != null && receiverAccount != null)
                     {
-                        senderAccount.Amount -= accountUpdateModel.Amount;
-                        receiverAccount.Amount += accountUpdateModel.Amount;
+                        if (senderAccount.Amount >= accountUpdateModel.Amount)
+                        {
+                            senderAccount.Amount -= accountUpdateModel.Amount;
+                            receiverAccount.Amount += accountUpdateModel.Amount;
                     
-                        await _mediator.Send(new UpdateAccountCommand(senderAccount.Id, senderAccount));
-                        await _mediator.Send(new UpdateAccountCommand(receiverAccount.Id, receiverAccount));
+                            await _mediator.Send(new UpdateAccountCommand(senderAccount.Id, senderAccount));
+                            await _mediator.Send(new UpdateAccountCommand(receiverAccount.Id, receiverAccount));
+                        }
+                        else
+                        {
+                            Debug.WriteLine("Brak pieniedzy");
+                        }
                     }
-                    else
-                    {
-                        Debug.WriteLine("Brak pieniedzy");
-                    }
-                }
                
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
             }
         }
 
@@ -73,7 +84,7 @@ namespace Accounts.Service.Services
             {
                 await _mediator.Send(new CreateAccountCommand
                 {
-                    Amount = 0,
+                    Amount = 3000,
                     UserId = accountUpdateModel.UserId
                 });
             }

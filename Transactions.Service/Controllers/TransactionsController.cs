@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Transactions.Service.Authorization.Helpers;
+using Transactions.Service.Authorization.Models;
 using Transactions.Service.Commands;
 using Transactions.Service.Models;
 using Transactions.Service.Queries.TransactionQueries;
@@ -18,10 +19,12 @@ namespace Transactions.Service.Controllers
     public class TransactionsController : ControllerBase
     {
         private readonly IMediator _mediator;
+        public HttpContext HttpContext { get; set; }
 
-        public TransactionsController(IMediator mediator)
+        public TransactionsController(IMediator mediator, IHttpContextAccessor contextAccessor)
         {
             _mediator = mediator;
+            HttpContext = contextAccessor.HttpContext;
         }
         
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -30,6 +33,8 @@ namespace Transactions.Service.Controllers
         [Authorize]
         public async Task<ActionResult<Transaction>> Create([FromBody] CreateTransactionCommand command)
         {
+            var authenticationUser = (AuthenticationUser)HttpContext.Items["auth"];
+            command.UserId = authenticationUser.UserId;
             var result = await _mediator.Send(command);
             return result;
         }

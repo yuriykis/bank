@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Transactions.Service.Authorization.Helpers;
 using Transactions.Service.Messaging.Options;
 using Transactions.Service.Messaging.Sender;
@@ -38,6 +38,7 @@ namespace Transactions.Service
             services.AddScoped<TransactionService>();
             services.AddTransient<ITransactionUpdateSender, TransactionUpdateSender>();
             services.AddMediatR(typeof(Startup));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

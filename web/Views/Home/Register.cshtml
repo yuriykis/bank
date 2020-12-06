@@ -11,11 +11,37 @@
 			<form asp-action="Register"
 			      asp-controller="Home"
 			      method="post">
-				<div class="row justify-content-md-center">
-					Username: <input type="text" name="username"/>
-                    				First Name: <input type="text" name="firstName"/>
-                    				Last Name: <input type="text" name="lastName"/>
-                    				Password: <input type="text" name="password"/>
+				<div class="row">
+					<div class="col">
+						Username:
+					</div>
+					<div class="col">
+						<input type="text" name="username"/>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col">
+						First Name:
+					</div>
+					<div class="col">
+						<input type="text" name="firstName"/>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col">
+						Last Name:
+					</div>
+					<div class="col">
+						<input type="text" name="lastName"/>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col">
+						Password
+					</div>
+					<div class="col">
+						<input type="password" name="password"/>
+					</div>
 				</div>
 				<input type="submit" value="Register"/>
 			</form>

@@ -31,6 +31,7 @@ namespace web
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUserRequests, UserRequests>();
             services.AddScoped<IAccountRequests, AccountRequests>();
+            services.AddScoped<ITransactionRequests, TransactionRequests>();
             services.AddRazorPages();
         }
 

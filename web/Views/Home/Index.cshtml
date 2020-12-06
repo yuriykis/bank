@@ -2,46 +2,9 @@
 
 @inject ILogger<Index> Logger
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bank";
 }
-<div class="container fluid">
-    <br/>
-    <div class="row justify-content-center  my-2">      
-        <div class="col">
-            <div class="row flex justify-content-between align-items-center">
-                Aplikacja Bankowa
-            </div>
-            <div class="row">
-               
-            </div>
-        </div>
-        <div class="col">
-        			@if (TempData["message"] != null)
-                    		{
-                    			<p style="color: green;">@TempData["message"]</p>
-                    		}
-        		</div>
-    </div>
-    <br/>
-     <div class="row justify-content-center  my-2">
-        <div class="col">
-            <div class="row justify-content-between align-items-center">
-               
-            </div>
-            <div class="row">
-                
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="row justify-content-center  my-2">
-        <div class="col">
-            <div class="row justify-content-between align-items-center">
-                
-            </div>
-            <div class="row">
-               
-            </div>
-        </div>
-    </div>
+<div class="row justify-content-md-center">
+    <h2>Bank Application</h2>
 </div>
+<hr/>

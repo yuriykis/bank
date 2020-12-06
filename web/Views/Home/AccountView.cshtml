@@ -9,10 +9,41 @@
 </div>
 <hr/>
 <div class="container">
-    <div class="row justify-content-md-center">
-        <div>
-            <h3>Account Data</h3>
-            @Html.DisplayFor(x => x.UserData)
+<div class="row justify-content-md-center">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                Username:
+            </div>
+            <div class="col">
+                @Model.UserData.Username
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                First Name:
+            </div>
+            <div class="col">
+                @Model.UserData.FirstName
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                Last Name:
+            </div>
+            <div class="col">
+                @Model.UserData.LastName
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                Amount:
+            </div>
+            <div class="col">
+                @Model.UserData.Amount
+            </div>
         </div>
     </div>
+</div>    
 </div>
+

@@ -39,6 +39,7 @@ namespace Transactions.Service.Handlers
                 SenderAccountId = newTransaction.SenderAccountId,
                 ReceiverAccountId = newTransaction.ReceiverAccountId,
                 Amount = newTransaction.Amount,
+                UserId = request.UserId,
                 Message = "ExecuteTransaction"
             });
             
