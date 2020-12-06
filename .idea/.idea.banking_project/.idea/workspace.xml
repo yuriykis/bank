@@ -27,59 +27,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Accounts.Service/Models/TransactionMessageModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionsByAccountReceiverIdHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionsByAccountSenderIdHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Messaging/Receiver/TransactionUpdateReceiver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/ITransactionExecuteSender.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/TransactionExecuteSender.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Models/TransactionUpdateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Queries/TransactionQueries/GetTransactionsByAccountReceiverIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Queries/TransactionQueries/GetTransactionsByAccountSenderIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Services/ITransactionUpdateService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transactions.Service/Services/TransactionUpdateService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Models/TransactionProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Views/Transaction/ViewIncomingTransactionsList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Views/Transaction/ViewOutgoingTransactionsList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Views/Transaction/_IncomingTransactions.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Views/Transaction/_OutgoingTransactions.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/dataSources/e409cb59-a638-4bd5-9870-a8c37e9c2219.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/dataSources/e409cb59-a638-4bd5-9870-a8c37e9c2219.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Handlers/UpdateAccountHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Handlers/UpdateAccountHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Models/AccountUpdateModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Models/AccountUpdateModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Services/AccountUpdateService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Services/AccountUpdateService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Controllers/TransactionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/CreateTransactionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/DeleteTransactionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetAllTransationsHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/GetTransactionByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Handlers/UpdateTransactionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/ITransactionUpdateSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Messaging/Sender/ITransactionUpdateSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/TransactionUpdateSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Messaging/Sender/TransactionUpdateSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Migrations/20201202200720_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Migrations/20201202200720_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Migrations/PrimaryContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Models/TransactionMessageModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Models/TransactionMessageModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Services/TransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions.Service/Transactions.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Transactions.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.Service/Users.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Users.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/AuthenticationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Controllers/TransactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/TransactionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Models/TransactionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Models/TransactionModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Views/Shared/_DefaultTopSection.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Shared/_DefaultTopSection.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/ITransactionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/ITransactionRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose_old.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger.turtle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/WiredTiger.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/WiredTigerHS.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/_mdb_catalog.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/collection-0-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/collection-11-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/collection-2-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/collection-4-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/collection-7-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/collection-9-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-04T13-11-14Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-08T11-15-01Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T20-40-47Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T20-51-10Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-01-19Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-07-39Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-11-02Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-14-32Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T21-18-00Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-28-11Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-30-21Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-34-06Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-37-37Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/diagnostic.data/metrics.2020-11-25T22-42-36Z-00000" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-1-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-10-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-12-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-3-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-5-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-6-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/index-8-7880648780947102764.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/journal/WiredTigerLog.0000000014" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/journal/WiredTigerPreplog.0000000001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/journal/WiredTigerPreplog.0000000002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/mongod.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/sizeStorer.wt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/storage.bson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo-init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/web/web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,16 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Users.Service/Startup.cs" />
-        <option value="$PROJECT_DIR$/web/Startup.cs" />
-        <option value="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" />
-        <option value="$PROJECT_DIR$/web/Controllers/AuthenticationController.cs" />
-        <option value="$PROJECT_DIR$/web/Controllers/HomeController.cs" />
-        <option value="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Services/AccountUpdateService.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Services/IAccountUpdateService.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Services/ITransactionUpdateService.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Receiver/AccountsUpdateReceiver.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Models/AccountUpdateModel.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Models/TransactionMessageModel.cs" />
@@ -165,11 +156,21 @@
         <option value="$PROJECT_DIR$/web/Views/Transaction/ViewTransactionList.cshtml" />
         <option value="$PROJECT_DIR$/web/Views/Transaction/OutgoingTransactions.cshtml" />
         <option value="$PROJECT_DIR$/web/Views/Transaction/ViewTransactionsList.cshtml" />
-        <option value="$PROJECT_DIR$/web/Views/Shared/_DefaultTopSection.cshtml" />
         <option value="$PROJECT_DIR$/web/Views/Transaction/ViewIncomingTransactionsList.cshtml" />
-        <option value="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" />
         <option value="$PROJECT_DIR$/web/Views/Transaction/_IncomingTransactions.cshtml" />
         <option value="$PROJECT_DIR$/web/Controllers/TransactionController.cs" />
+        <option value="$PROJECT_DIR$/web/Views/Shared/_DefaultTopSection.cshtml" />
+        <option value="$PROJECT_DIR$/Transactions.Service/Dockerfile" />
+        <option value="$PROJECT_DIR$/Users.Service/Dockerfile" />
+        <option value="$PROJECT_DIR$/web/appsettings.json" />
+        <option value="$PROJECT_DIR$/web/WebApi/UserRequests.cs" />
+        <option value="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" />
+        <option value="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" />
+        <option value="$PROJECT_DIR$/Accounts.Service/Dockerfile" />
+        <option value="$PROJECT_DIR$/Accounts.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/Transactions.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
       </list>
     </option>
   </component>
@@ -389,7 +390,7 @@
       <workItem from="1607166861596" duration="31009000" />
       <workItem from="1607201430877" duration="9931000" />
       <workItem from="1607213779879" duration="954000" />
-      <workItem from="1607252274558" duration="25603000" />
+      <workItem from="1607252274558" duration="29417000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -482,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607256656855</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="send-rabbitmq-from-transaction-and-list-transactions-on-front">
+      <created>1607288278250</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1607288278250</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +525,8 @@
     <MESSAGE value="add-razor-pages" />
     <MESSAGE value="fix-transaction-security" />
     <MESSAGE value="configure-logger" />
-    <option name="LAST_COMMIT_MESSAGE" value="configure-logger" />
+    <MESSAGE value="send-rabbitmq-from-transaction-and-list-transactions-on-front" />
+    <option name="LAST_COMMIT_MESSAGE" value="send-rabbitmq-from-transaction-and-list-transactions-on-front" />
   </component>
   <component name="WindowStateProjectService">
     <state x="666" y="378" width="588" height="361" key="#Notifications" timestamp="1607172036499">
@@ -542,106 +551,106 @@
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="743" y="315" width="434" height="487" key="FileChooserDialogImpl/0.29.1920.1051@0.29.1920.1051" timestamp="1607169926047" />
-    <state width="1872" height="58" key="GridCell.Tab.0.bottom" timestamp="1607287831011">
+    <state width="1872" height="145" key="GridCell.Tab.0.bottom" timestamp="1607287970728">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="58" key="GridCell.Tab.0.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287831011" />
-    <state width="1872" height="58" key="GridCell.Tab.0.center" timestamp="1607287831010">
+    <state width="1872" height="145" key="GridCell.Tab.0.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970728" />
+    <state width="1872" height="145" key="GridCell.Tab.0.center" timestamp="1607287970728">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="58" key="GridCell.Tab.0.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287831010" />
-    <state width="1872" height="58" key="GridCell.Tab.0.left" timestamp="1607287831010">
+    <state width="1872" height="145" key="GridCell.Tab.0.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970728" />
+    <state width="1872" height="145" key="GridCell.Tab.0.left" timestamp="1607287970727">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="58" key="GridCell.Tab.0.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287831010" />
-    <state width="1872" height="58" key="GridCell.Tab.0.right" timestamp="1607287831010">
+    <state width="1872" height="145" key="GridCell.Tab.0.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970727" />
+    <state width="1872" height="145" key="GridCell.Tab.0.right" timestamp="1607287970728">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="58" key="GridCell.Tab.0.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287831010" />
-    <state width="1872" height="58" key="GridCell.Tab.1.bottom" timestamp="1607287874730">
+    <state width="1872" height="145" key="GridCell.Tab.0.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970728" />
+    <state width="1872" height="145" key="GridCell.Tab.1.bottom" timestamp="1607287976750">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.1.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287874730" />
-    <state width="1872" height="58" key="GridCell.Tab.1.center" timestamp="1607287874730">
+    <state width="1872" height="145" key="GridCell.Tab.1.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287976750" />
+    <state width="1872" height="145" key="GridCell.Tab.1.center" timestamp="1607287976750">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.1.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287874730" />
-    <state width="1872" height="58" key="GridCell.Tab.1.left" timestamp="1607287874729">
+    <state width="1872" height="145" key="GridCell.Tab.1.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287976750" />
+    <state width="1872" height="145" key="GridCell.Tab.1.left" timestamp="1607287976750">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315395" />
-    <state width="1872" height="58" key="GridCell.Tab.1.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287874729" />
-    <state width="1872" height="58" key="GridCell.Tab.1.right" timestamp="1607287874730">
+    <state width="1872" height="145" key="GridCell.Tab.1.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287976750" />
+    <state width="1872" height="145" key="GridCell.Tab.1.right" timestamp="1607287976750">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.1.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287874730" />
-    <state width="1872" height="58" key="GridCell.Tab.2.bottom" timestamp="1607287830751">
+    <state width="1872" height="145" key="GridCell.Tab.1.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287976750" />
+    <state width="1872" height="145" key="GridCell.Tab.2.bottom" timestamp="1607287970413">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.2.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830751" />
-    <state width="1872" height="58" key="GridCell.Tab.2.center" timestamp="1607287830751">
+    <state width="1872" height="145" key="GridCell.Tab.2.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970413" />
+    <state width="1872" height="145" key="GridCell.Tab.2.center" timestamp="1607287970412">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.2.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830751" />
-    <state width="1872" height="58" key="GridCell.Tab.2.left" timestamp="1607287830751">
+    <state width="1872" height="145" key="GridCell.Tab.2.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970412" />
+    <state width="1872" height="145" key="GridCell.Tab.2.left" timestamp="1607287970412">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.2.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830751" />
-    <state width="1872" height="58" key="GridCell.Tab.2.right" timestamp="1607287830751">
+    <state width="1872" height="145" key="GridCell.Tab.2.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970412" />
+    <state width="1872" height="145" key="GridCell.Tab.2.right" timestamp="1607287970412">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="58" key="GridCell.Tab.2.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830751" />
-    <state width="1872" height="58" key="GridCell.Tab.3.bottom" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.2.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970412" />
+    <state width="1872" height="145" key="GridCell.Tab.3.bottom" timestamp="1607287970414">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.3.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
-    <state width="1872" height="58" key="GridCell.Tab.3.center" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.3.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970414" />
+    <state width="1872" height="145" key="GridCell.Tab.3.center" timestamp="1607287970413">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.3.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
-    <state width="1872" height="58" key="GridCell.Tab.3.left" timestamp="1607287830751">
+    <state width="1872" height="145" key="GridCell.Tab.3.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970413" />
+    <state width="1872" height="145" key="GridCell.Tab.3.left" timestamp="1607287970413">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.3.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830751" />
-    <state width="1872" height="58" key="GridCell.Tab.3.right" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.3.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970413" />
+    <state width="1872" height="145" key="GridCell.Tab.3.right" timestamp="1607287970413">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.3.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
-    <state width="1872" height="58" key="GridCell.Tab.4.bottom" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.3.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970413" />
+    <state width="1872" height="145" key="GridCell.Tab.4.bottom" timestamp="1607287970419">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.4.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
-    <state width="1872" height="58" key="GridCell.Tab.4.center" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.4.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970419" />
+    <state width="1872" height="145" key="GridCell.Tab.4.center" timestamp="1607287970414">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.4.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
-    <state width="1872" height="58" key="GridCell.Tab.4.left" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.4.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970414" />
+    <state width="1872" height="145" key="GridCell.Tab.4.left" timestamp="1607287970414">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.4.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
-    <state width="1872" height="58" key="GridCell.Tab.4.right" timestamp="1607287830752">
+    <state width="1872" height="145" key="GridCell.Tab.4.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970414" />
+    <state width="1872" height="145" key="GridCell.Tab.4.right" timestamp="1607287970415">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="58" key="GridCell.Tab.4.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287830752" />
+    <state width="1872" height="145" key="GridCell.Tab.4.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607287970415" />
     <state width="189" height="455" key="HiddenNamespacesPopup" timestamp="1606929403520">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -663,11 +672,11 @@
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="100" y="129" width="1730" height="856" key="VCS.FileHistoryDialog/0.29.1920.1051@0.29.1920.1051" timestamp="1607255455286" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607256663484">
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607288283314">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606941419287" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607256663484" />
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607288283314" />
     <state width="775" height="437" key="XDebugger.FullValuePopup" timestamp="1606675020007">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -697,23 +706,6 @@
     <state x="539" y="249" width="840" height="825" key="search.everywhere.popup/0.29.1920.1051@0.29.1920.1051" timestamp="1607031446659" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/web/WebApi/TransactionRequests.cs</url>
-          <line>68</line>
-          <properties documentPath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" initialLine="68">
-            <startOffsets>
-              <option value="2536" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2652" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#System.Net.Http.HttpClient" memberName="DefaultRequestHeaders" />

@@ -2,30 +2,65 @@ version: '3.4'
 
 services:
 
-  mongo:
-    image: mongo
-    container_name: mongodb
-    restart: always
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: adminadmin
-    #   MONGO_INITDB_ROOT_PASSWORD: adminadmin
-    volumes: 
-      - ./db_data:/data/db
+  postgres:
+    image: postgres:11.2
+    container_name: postgres_bank
     ports:
-      - 27017:27017
-
-    
-  api:
+      - 5432:5432
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/db_password:/run/db_password
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD_FILE=/run/db_password
+      - PGDATA=/var/lib/postgresql/data
+        
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - 5672:5672
+      - 15672:15672
+  
+  users.service:
     build:
       context: .
-      dockerfile: api/Dockerfile
-    container_name: api
+      dockerfile: Users.Service/Dockerfile
+    container_name: users.service
     ports:
-      - 5001:5001 # na potrzeby testowania
+      - 5001:5001
     restart: always
-    depends_on: 
-      - mongo
+    depends_on:
+      - postgres
+      - rabbitmq
 
+  transactions.service:
+    build:
+      context: .
+      dockerfile: Transactions.Service/Dockerfile
+    container_name: transactions.service
+    ports:
+      - 5002:5002
+    restart: always
+    depends_on:
+      - postgres
+      - rabbitmq
+    
+  accounts.service:
+    build:
+      context: .
+      dockerfile: Accounts.Service/Dockerfile
+    container_name: accounts.service
+    ports:
+      - 5003:5003
+    restart: always
+    depends_on:
+      - postgres
+      - rabbitmq
 
   web:
     build:
@@ -35,5 +70,12 @@ services:
     ports:
       - 5000:5000
     restart: always
-    depends_on: 
-      - api
+    
+  nginx:
+    image: nginx:1.17.2
+    container_name: nginx
+    ports:
+      - 5005:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    restart: always

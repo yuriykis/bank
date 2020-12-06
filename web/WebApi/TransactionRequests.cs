@@ -13,7 +13,7 @@ namespace web.WebApi
     public class TransactionRequests : ITransactionRequests
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private const string TransactionServiceHost = "http://localhost:5002/";
+        private const string TransactionServiceHost = "http://nginx:80/";
 
         public async Task<bool> CompleteTransaction(string token, TransactionModel transactionModel)
         {

@@ -14,7 +14,7 @@ namespace web.WebApi
     {
         private readonly HttpClient _httpClient = new HttpClient();
 
-        private const string UserServiceHost = "http://localhost:5001/";
+        private const string UserServiceHost = "http://nginx:80/";
         
         public async Task<UserModel> GetUserData(string token, string userId)
         {

@@ -9,7 +9,7 @@ namespace web.WebApi
     public class AccountRequests : IAccountRequests
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private const string AccountsServiceHost = "http://localhost:5003/";
+        private const string AccountsServiceHost = "http://nginx:80/";
         
         public async Task<AccountModel> GetUserAccountData(string token, string userId)
         {
