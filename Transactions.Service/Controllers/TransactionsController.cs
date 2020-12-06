@@ -10,6 +10,7 @@ using Transactions.Service.Authorization.Models;
 using Transactions.Service.Commands;
 using Transactions.Service.Models;
 using Transactions.Service.Queries.TransactionQueries;
+using Microsoft.Extensions.Logging;
 
 namespace Transactions.Service.Controllers
 {
@@ -19,11 +20,13 @@ namespace Transactions.Service.Controllers
     public class TransactionsController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public HttpContext HttpContext { get; set; }
+        private readonly ILogger<TransactionsController> _logger;
+        private new HttpContext HttpContext { get; }
 
-        public TransactionsController(IMediator mediator, IHttpContextAccessor contextAccessor)
+        public TransactionsController(IMediator mediator, IHttpContextAccessor contextAccessor, ILogger<TransactionsController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
             HttpContext = contextAccessor.HttpContext;
         }
         
@@ -33,28 +36,55 @@ namespace Transactions.Service.Controllers
         [Authorize]
         public async Task<ActionResult<Transaction>> Create([FromBody] CreateTransactionCommand command)
         {
-            var authenticationUser = (AuthenticationUser)HttpContext.Items["auth"];
-            command.UserId = authenticationUser.UserId;
-            var result = await _mediator.Send(command);
-            return result;
+            try
+            {
+                var authenticationUser = (AuthenticationUser)HttpContext.Items["auth"];
+                command.UserId = authenticationUser.UserId;
+                var result = await _mediator.Send(command);
+                _logger.LogInformation("New transaction from " + command.SenderAccountId + " to " + command.ReceiverAccountId + " in the amount of " + command.Amount + " has been created");
+                return result;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Transaction creation error");
+                return NotFound();
+            }
         }
         
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<List<Transaction>>> Get()
         {
-            var query = new GetAllTransactionsQuery();
-            var result = await _mediator.Send(query);
-            return Ok(result);
+            try
+            {
+                var query = new GetAllTransactionsQuery();
+                var result = await _mediator.Send(query);
+                _logger.LogInformation("Get list of transactions request");
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error get list of transactions request: " + e);
+                return NotFound();
+            }
         }
         
         [HttpGet(template: "{id}", Name = "GetTransaction")]
         [Authorize]
         public async Task<ActionResult<Transaction>> Get(String id)
         {
-            var query = new GetTransactionByIdQuery(id);
-            var result = await _mediator.Send(query);
-            return result != null ? (ActionResult<Transaction>) Ok(result) : NotFound();
+            try
+            {
+                var query = new GetTransactionByIdQuery(id);
+                var result = await _mediator.Send(query);
+                _logger.LogInformation("Get transaction by id" + id + " request");
+                return result != null ? (ActionResult<Transaction>) Ok(result) : NotFound();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error Get transaction by id" + id + " request: " + e);
+                return NotFound();
+            }
         }
 
         [HttpPut("{id:length(24)}")]
@@ -65,12 +95,12 @@ namespace Transactions.Service.Controllers
             var result = await _mediator.Send(command);
             if (result)
             {
+                _logger.LogInformation("Update transaction " + id + " request");
                 return NoContent();
             }
-            else
-            {
-                return NotFound();
-            }
+
+            _logger.LogError("Error Update transaction " + id + " request: ");
+            return NotFound();
         }
         
 
@@ -82,12 +112,12 @@ namespace Transactions.Service.Controllers
             var result = await _mediator.Send(command);
             if (result)
             {
+                _logger.LogInformation("Delete transaction " + id + " request");
                 return NoContent();
             }
-            else
-            {
-                return NotFound();
-            }
+
+            _logger.LogError("Error Delete transaction " + id + " request: ");
+            return NotFound();
         }
     }
 }

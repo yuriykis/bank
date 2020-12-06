@@ -67,9 +67,17 @@ namespace Users.Service.Services
 
         public async Task<User> Get(string username, string password)
         {
-            return await _context.Users.SingleOrDefaultAsync(
-                user => user.Username == username && user.Password == password
+            try
+            {
+                var response = await _context.Users.SingleOrDefaultAsync(
+                    user => user.Username == username && user.Password == password
                 );
+                return response;
+            }
+            catch (Exception e)
+            {
+                return new User();
+            }
         }
 
         public async Task<User> Create(User user)

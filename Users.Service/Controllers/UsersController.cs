@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Users.Service.Authorization.Helpers;
 using Users.Service.Authorization.Models;
 using Users.Service.Commands;
@@ -19,28 +20,48 @@ namespace Users.Service.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ILogger<UsersController> _logger;
 
-        public UsersController(IMediator mediator)
+        public UsersController(IMediator mediator, ILogger<UsersController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
         
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<List<User>>> Get()
         {
-            var query = new GetAllUsersQuery();
-            var result = await _mediator.Send(query);
-            return Ok(result);
+            try
+            {
+                var query = new GetAllUsersQuery();
+                var result = await _mediator.Send(query);
+                _logger.LogInformation("Get list of users request");
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error Get list of users request");
+                return NotFound();
+            }
         }
         
         [HttpGet(template: "{id}")]
         [Authorize]
         public async Task<ActionResult<User>> Get(String id)
         {
-            var query = new GetUserByIdQuery(id);
-            var result = await _mediator.Send(query);
-            return result != null ? (ActionResult<User>) Ok(result) : NotFound();
+            try
+            {
+                var query = new GetUserByIdQuery(id);
+                var result = await _mediator.Send(query);
+                _logger.LogInformation("Get user by id " + id + " request");
+                return result != null ? (ActionResult<User>) Ok(result) : NotFound();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error Get user by id " + id + " request");
+                return NotFound();
+            }
         }
         
         [HttpPost("authenticate")]
@@ -49,7 +70,13 @@ namespace Users.Service.Controllers
             try
             {
                 var query = new GetUserByParamsQuery(request.Username, request.Password);
+                
                 var res = await _mediator.Send(query);
+                if (res.Id == null)
+                {
+                    _logger.LogError("Authorization error. The login details provided are not correct");
+                    return NotFound();
+                }
                 
                 var command = new AuthenticateUserCommand
                 {
@@ -60,12 +87,15 @@ namespace Users.Service.Controllers
                 var result = await _mediator.Send(command);
                 if (result == null)
                 {
+                    _logger.LogError("Authorization error. Login failed");
                     return NotFound();
                 }
+                _logger.LogInformation("User " + request.Username + " has been logged in");
                 return result;
             }
             catch (Exception ex)
             {
+                _logger.LogError("Authorization error. Login failed");
                 return BadRequest(ex.Message);
             }
         }
@@ -79,10 +109,12 @@ namespace Users.Service.Controllers
             try
             {
                 var result = await _mediator.Send(command);
+                _logger.LogInformation("New user has been created");
                 return result;
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error while creating new user");
                 return BadRequest(ex.Message);
             }
 
@@ -95,12 +127,12 @@ namespace Users.Service.Controllers
             var result = await _mediator.Send(command);
             if (result)
             {
+                _logger.LogInformation("User " + id + "has been updated");
                 return NoContent();
             }
-            else
-            {
-                return NotFound();
-            }
+
+            _logger.LogError("Error while updating user " + id);
+            return NotFound();
         }
         
         [HttpDelete("{id}")]
@@ -111,12 +143,12 @@ namespace Users.Service.Controllers
             var result = await _mediator.Send(command);
             if (result)
             {
+                _logger.LogInformation("User " + id + "has been deleted");
                 return NoContent();
             }
-            else
-            {
-                return NotFound();
-            }
+
+            _logger.LogError("Error while deleting user " + id);
+            return NotFound();
         }
         
     }
