@@ -30,16 +30,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/16448" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/16448" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/16454" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/16454" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/2619" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/2619" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32808" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32808" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32814" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32814" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32816" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32816" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32822" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32822" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/pg_internal.init" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/global/pg_control" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/data/pg_stat_tmp/db_0.stat" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_stat_tmp/db_0.stat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/data/pg_stat_tmp/db_13067.stat" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_stat_tmp/db_13067.stat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/data/pg_stat_tmp/global.stat" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_stat_tmp/global.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/global/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/global/pg_internal.init" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_wal/000000010000000000000001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/pg_xact/0000" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_xact/0000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Controllers/TransactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/TransactionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Domain/Entities/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Domain/Entities/UserData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,10 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Transactions.Service/Models/Transaction.cs" />
-        <option value="$PROJECT_DIR$/Accounts.Service/Models/AccountUpdateModel.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Models/TransactionMessageModel.cs" />
-        <option value="$PROJECT_DIR$/Transactions.Service/Models/TransactionUpdateModel.cs" />
         <option value="$PROJECT_DIR$/Transactions.Service/Messaging/Sender/ITransactionExecuteSender.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Models/TransactionUpdateModel.cs" />
         <option value="$PROJECT_DIR$/Accounts.Service/Messaging/Sender/ITransactionUpdateSender.cs" />
@@ -117,7 +121,6 @@
         <option value="$PROJECT_DIR$/web/Views/Transaction/ViewTransactionsList.cshtml" />
         <option value="$PROJECT_DIR$/web/Views/Transaction/ViewIncomingTransactionsList.cshtml" />
         <option value="$PROJECT_DIR$/web/Views/Transaction/_IncomingTransactions.cshtml" />
-        <option value="$PROJECT_DIR$/web/Controllers/TransactionController.cs" />
         <option value="$PROJECT_DIR$/web/Views/Shared/_DefaultTopSection.cshtml" />
         <option value="$PROJECT_DIR$/Transactions.Service/Dockerfile" />
         <option value="$PROJECT_DIR$/Users.Service/Dockerfile" />
@@ -127,9 +130,14 @@
         <option value="$PROJECT_DIR$/Transactions.Service/appsettings.json" />
         <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" />
         <option value="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" />
         <option value="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" />
         <option value="$PROJECT_DIR$/web/WebApi/UserRequests.cs" />
+        <option value="$PROJECT_DIR$/web/Controllers/TransactionController.cs" />
+        <option value="$PROJECT_DIR$/web/Domain/Entities/UserData.cs" />
+        <option value="$PROJECT_DIR$/web/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" />
       </list>
     </option>
   </component>
@@ -154,7 +162,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.web">
+  <component name="RunManager" selected="Docker.docker-compose.yml.accounts.service: Compose Deployment">
     <configuration name="Accounts.Service: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Accounts.Service/Accounts.Service.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -305,9 +313,66 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.accounts.service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="services">
+            <list>
+              <option value="accounts.service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="nginx" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.transactions.service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="transactions.service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.users.service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="users.service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.web: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="web" />
+            </list>
+          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -315,7 +380,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.accounts.service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.web: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.nginx: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.users.service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.transactions.service: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -349,7 +418,10 @@
       <workItem from="1607166861596" duration="31009000" />
       <workItem from="1607201430877" duration="9931000" />
       <workItem from="1607213779879" duration="954000" />
-      <workItem from="1607252274558" duration="31480000" />
+      <workItem from="1607252274558" duration="32610000" />
+      <workItem from="1607362652515" duration="1519000" />
+      <workItem from="1607365869840" duration="3888000" />
+      <workItem from="1607442686943" duration="5083000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -463,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607292493061</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix-notification-text">
+      <created>1607294506672</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607294506672</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +580,8 @@
     <MESSAGE value="send-rabbitmq-from-transaction-and-list-transactions-on-front" />
     <MESSAGE value="new-docker-conf" />
     <MESSAGE value="add-nginx-and-db-data" />
-    <option name="LAST_COMMIT_MESSAGE" value="add-nginx-and-db-data" />
+    <MESSAGE value="fix-notification-text" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix-notification-text" />
   </component>
   <component name="WindowStateProjectService">
     <state x="666" y="378" width="588" height="361" key="#Notifications" timestamp="1607172036499">
@@ -526,106 +606,106 @@
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="743" y="315" width="434" height="487" key="FileChooserDialogImpl/0.29.1920.1051@0.29.1920.1051" timestamp="1607169926047" />
-    <state width="1872" height="519" key="GridCell.Tab.0.bottom" timestamp="1607292456292">
+    <state width="1872" height="457" key="GridCell.Tab.0.bottom" timestamp="1607297008599">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="519" key="GridCell.Tab.0.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456292" />
-    <state width="1872" height="519" key="GridCell.Tab.0.center" timestamp="1607292456290">
+    <state width="1872" height="457" key="GridCell.Tab.0.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008599" />
+    <state width="1872" height="457" key="GridCell.Tab.0.center" timestamp="1607297008598">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="519" key="GridCell.Tab.0.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456290" />
-    <state width="1872" height="519" key="GridCell.Tab.0.left" timestamp="1607292456289">
+    <state width="1872" height="457" key="GridCell.Tab.0.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008598" />
+    <state width="1872" height="457" key="GridCell.Tab.0.left" timestamp="1607297008598">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="519" key="GridCell.Tab.0.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456289" />
-    <state width="1872" height="519" key="GridCell.Tab.0.right" timestamp="1607292456291">
+    <state width="1872" height="457" key="GridCell.Tab.0.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008598" />
+    <state width="1872" height="457" key="GridCell.Tab.0.right" timestamp="1607297008598">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="297" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606941296090" />
-    <state width="1872" height="519" key="GridCell.Tab.0.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456291" />
-    <state width="1872" height="519" key="GridCell.Tab.1.bottom" timestamp="1607292456295">
+    <state width="1872" height="457" key="GridCell.Tab.0.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008598" />
+    <state width="1872" height="457" key="GridCell.Tab.1.bottom" timestamp="1607297008599">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.1.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456295" />
-    <state width="1872" height="519" key="GridCell.Tab.1.center" timestamp="1607292456294">
+    <state width="1872" height="457" key="GridCell.Tab.1.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008599" />
+    <state width="1872" height="457" key="GridCell.Tab.1.center" timestamp="1607297008599">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.1.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456294" />
-    <state width="1872" height="519" key="GridCell.Tab.1.left" timestamp="1607292456293">
+    <state width="1872" height="457" key="GridCell.Tab.1.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008599" />
+    <state width="1872" height="457" key="GridCell.Tab.1.left" timestamp="1607297008599">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315395" />
-    <state width="1872" height="519" key="GridCell.Tab.1.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456293" />
-    <state width="1872" height="519" key="GridCell.Tab.1.right" timestamp="1607292456294">
+    <state width="1872" height="457" key="GridCell.Tab.1.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008599" />
+    <state width="1872" height="457" key="GridCell.Tab.1.right" timestamp="1607297008599">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.1.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456294" />
-    <state width="1872" height="519" key="GridCell.Tab.2.bottom" timestamp="1607292456299">
+    <state width="1872" height="457" key="GridCell.Tab.1.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008599" />
+    <state width="1872" height="457" key="GridCell.Tab.2.bottom" timestamp="1607297008602">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.2.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456299" />
-    <state width="1872" height="519" key="GridCell.Tab.2.center" timestamp="1607292456297">
+    <state width="1872" height="457" key="GridCell.Tab.2.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008602" />
+    <state width="1872" height="457" key="GridCell.Tab.2.center" timestamp="1607297008600">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.2.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456297" />
-    <state width="1872" height="519" key="GridCell.Tab.2.left" timestamp="1607292456296">
+    <state width="1872" height="457" key="GridCell.Tab.2.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008600" />
+    <state width="1872" height="457" key="GridCell.Tab.2.left" timestamp="1607297008599">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.2.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456296" />
-    <state width="1872" height="519" key="GridCell.Tab.2.right" timestamp="1607292456298">
+    <state width="1872" height="457" key="GridCell.Tab.2.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008599" />
+    <state width="1872" height="457" key="GridCell.Tab.2.right" timestamp="1607297008600">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315396" />
-    <state width="1872" height="519" key="GridCell.Tab.2.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456298" />
-    <state width="1872" height="519" key="GridCell.Tab.3.bottom" timestamp="1607292456303">
+    <state width="1872" height="457" key="GridCell.Tab.2.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008600" />
+    <state width="1872" height="457" key="GridCell.Tab.3.bottom" timestamp="1607297008603">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.3.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456303" />
-    <state width="1872" height="519" key="GridCell.Tab.3.center" timestamp="1607292456301">
+    <state width="1872" height="457" key="GridCell.Tab.3.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008603" />
+    <state width="1872" height="457" key="GridCell.Tab.3.center" timestamp="1607297008602">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.3.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456301" />
-    <state width="1872" height="519" key="GridCell.Tab.3.left" timestamp="1607292456300">
+    <state width="1872" height="457" key="GridCell.Tab.3.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008602" />
+    <state width="1872" height="457" key="GridCell.Tab.3.left" timestamp="1607297008602">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.3.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456300" />
-    <state width="1872" height="519" key="GridCell.Tab.3.right" timestamp="1607292456302">
+    <state width="1872" height="457" key="GridCell.Tab.3.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008602" />
+    <state width="1872" height="457" key="GridCell.Tab.3.right" timestamp="1607297008602">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.3.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456302" />
-    <state width="1872" height="519" key="GridCell.Tab.4.bottom" timestamp="1607292456307">
+    <state width="1872" height="457" key="GridCell.Tab.3.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008602" />
+    <state width="1872" height="457" key="GridCell.Tab.4.bottom" timestamp="1607297008603">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.4.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456307" />
-    <state width="1872" height="519" key="GridCell.Tab.4.center" timestamp="1607292456305">
+    <state width="1872" height="457" key="GridCell.Tab.4.bottom/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008603" />
+    <state width="1872" height="457" key="GridCell.Tab.4.center" timestamp="1607297008603">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.4.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456305" />
-    <state width="1872" height="519" key="GridCell.Tab.4.left" timestamp="1607292456304">
+    <state width="1872" height="457" key="GridCell.Tab.4.center/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008603" />
+    <state width="1872" height="457" key="GridCell.Tab.4.left" timestamp="1607297008603">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.4.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456304" />
-    <state width="1872" height="519" key="GridCell.Tab.4.right" timestamp="1607292456306">
+    <state width="1872" height="457" key="GridCell.Tab.4.left/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008603" />
+    <state width="1872" height="457" key="GridCell.Tab.4.right" timestamp="1607297008603">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state width="1493" height="156" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1606939315397" />
-    <state width="1872" height="519" key="GridCell.Tab.4.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607292456306" />
+    <state width="1872" height="457" key="GridCell.Tab.4.right/0.29.1920.1051@0.29.1920.1051" timestamp="1607297008603" />
     <state width="189" height="455" key="HiddenNamespacesPopup" timestamp="1606929403520">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -647,11 +727,11 @@
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="100" y="129" width="1730" height="856" key="VCS.FileHistoryDialog/0.29.1920.1051@0.29.1920.1051" timestamp="1607255455286" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607292498982">
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607294510504">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606941419287" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607292498982" />
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607294510504" />
     <state width="775" height="437" key="XDebugger.FullValuePopup" timestamp="1606675020007">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -669,11 +749,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606413469652" />
-    <state x="531" y="269" key="run.anything.popup" timestamp="1607254941218">
+    <state x="531" y="269" key="run.anything.popup" timestamp="1607444248405">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606672489746" />
-    <state x="531" y="269" key="run.anything.popup/0.29.1920.1051@0.29.1920.1051" timestamp="1607254941218" />
+    <state x="531" y="269" key="run.anything.popup/0.29.1920.1051@0.29.1920.1051" timestamp="1607444248405" />
     <state x="539" y="249" width="840" height="825" key="search.everywhere.popup" timestamp="1607031446659">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>

@@ -93,6 +93,7 @@ namespace web.Controllers
             else
             {
                 profile.UserData.Amount = Int32.Parse(accountModel.Amount);
+                profile.UserData.AccountId = accountModel.Id;
             }
 
             return View(profile);

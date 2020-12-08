@@ -6,5 +6,7 @@ namespace web.Domain.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Amount { get; set; }
+
+        public string AccountId { get; set; }
     }
 }

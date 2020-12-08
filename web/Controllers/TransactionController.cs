@@ -106,7 +106,12 @@ namespace web.Controllers
             var token = GetCookie("Token");
             var userId = GetCookie("UserId");
             var account = await _accountRequests.GetUserAccountData(token, userId);
-                
+
+            if (account == null)
+            {
+                TempData["message"] = "Could not get account data. Account service is probably unavailable";
+                return RedirectToAction("");
+            }
             var transactionModelList = await _transactionRequests.GetTransactionBySenderList(token, account.Id);
             
             if (transactionModelList == null)

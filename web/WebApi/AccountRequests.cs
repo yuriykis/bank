@@ -15,18 +15,22 @@ namespace web.WebApi
         {
             var path = "api/accounts/user/" + userId;
             var requestUrl = AccountsServiceHost + path;
-            
+
             try
             {
                 _httpClient.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer",token);
-                
+                    new AuthenticationHeaderValue("Bearer", token);
+
                 var responseMessage = await _httpClient.GetAsync(requestUrl);
                 var content = responseMessage.Content;
                 var response = await content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<AccountModel>(response);
             }
             catch (HttpRequestException exception)
+            {
+                return null;
+            }
+            catch (JsonReaderException e)
             {
                 return null;
             }

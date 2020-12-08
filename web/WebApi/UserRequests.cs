@@ -35,6 +35,10 @@ namespace web.WebApi
             {
                 return null;
             }
+            catch (JsonReaderException e)
+            {
+                return null;
+            }
         }
 
         public async Task<AuthenticateResponse> LoginUser(AuthenticateRequest authenticateRequest)
@@ -52,6 +56,10 @@ namespace web.WebApi
                 return JsonConvert.DeserializeObject<AuthenticateResponse>(response);
             }
             catch (HttpRequestException exception)
+            {
+                return null;
+            }
+            catch (JsonReaderException e)
             {
                 return null;
             }

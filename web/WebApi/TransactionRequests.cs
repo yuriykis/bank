@@ -57,6 +57,10 @@ namespace web.WebApi
             {
                 return null;
             }
+            catch (JsonReaderException e)
+            {
+                return null;
+            }
         }
 
         public async Task<List<TransactionModel>> GetTransactionByReceiverList(string token, string accountId)
@@ -75,6 +79,10 @@ namespace web.WebApi
                 return JsonConvert.DeserializeObject<List<TransactionModel>>(response);
             }
             catch (HttpRequestException exception)
+            {
+                return null;
+            }
+            catch (JsonReaderException e)
             {
                 return null;
             }
