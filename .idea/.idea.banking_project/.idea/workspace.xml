@@ -28,26 +28,27 @@
   <component name="ChangeListManager">
     <list default="true" id="24766853-6171-411e-bcb8-5a93ea24ec12" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.banking_project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.Service/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.Service/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.Service/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.Service/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/1259" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/1259" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/16448" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/16448" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/16448_fsm" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/16448_fsm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/16448_vm" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/16448_vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/16454" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/16454" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/2619" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/2619" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/2696" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/2696" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/2840" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/2840" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/2840_fsm" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/2840_fsm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/2841" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/2841" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32808" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32808" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32814" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32814" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32816" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32816" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/32822" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/32822" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/data/base/13067/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/base/13067/pg_internal.init" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/global/pg_control" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/data/global/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/global/pg_internal.init" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/data/pg_subtrans/0000" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_subtrans/0000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_wal/000000010000000000000001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/data/pg_xact/0000" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/data/pg_xact/0000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Controllers/TransactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Controllers/TransactionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Domain/Entities/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/Domain/Entities/UserData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/web/WebApi/UserRequests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,10 +127,6 @@
         <option value="$PROJECT_DIR$/Users.Service/Dockerfile" />
         <option value="$PROJECT_DIR$/web/appsettings.json" />
         <option value="$PROJECT_DIR$/Accounts.Service/Dockerfile" />
-        <option value="$PROJECT_DIR$/Accounts.Service/appsettings.json" />
-        <option value="$PROJECT_DIR$/Transactions.Service/appsettings.json" />
-        <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/web/Views/Authentication/Login.cshtml" />
         <option value="$PROJECT_DIR$/web/WebApi/AccountRequests.cs" />
         <option value="$PROJECT_DIR$/web/WebApi/TransactionRequests.cs" />
@@ -138,6 +135,10 @@
         <option value="$PROJECT_DIR$/web/Domain/Entities/UserData.cs" />
         <option value="$PROJECT_DIR$/web/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/web/Views/Home/AccountView.cshtml" />
+        <option value="$PROJECT_DIR$/Accounts.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/Transactions.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/Users.Service/appsettings.json" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
       </list>
     </option>
   </component>
@@ -380,9 +381,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.nginx: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.accounts.service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.web: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.nginx: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.users.service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.transactions.service: Compose Deployment" />
       </list>
@@ -421,7 +422,9 @@
       <workItem from="1607252274558" duration="32610000" />
       <workItem from="1607362652515" duration="1519000" />
       <workItem from="1607365869840" duration="3888000" />
-      <workItem from="1607442686943" duration="5083000" />
+      <workItem from="1607442686943" duration="6769000" />
+      <workItem from="1607464898962" duration="603000" />
+      <workItem from="1607466908210" duration="2984000" />
     </task>
     <task id="LOCAL-00001" summary="add-cqrs-pattern">
       <created>1606335542778</created>
@@ -542,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607294506672</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix-some-frontend-bugs">
+      <created>1607448556928</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607448556928</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +591,8 @@
     <MESSAGE value="new-docker-conf" />
     <MESSAGE value="add-nginx-and-db-data" />
     <MESSAGE value="fix-notification-text" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix-notification-text" />
+    <MESSAGE value="fix-some-frontend-bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix-some-frontend-bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="666" y="378" width="588" height="361" key="#Notifications" timestamp="1607172036499">
@@ -727,11 +738,11 @@
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="100" y="129" width="1730" height="856" key="VCS.FileHistoryDialog/0.29.1920.1051@0.29.1920.1051" timestamp="1607255455286" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607294510504">
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1607448563135">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606941419287" />
-    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607294510504" />
+    <state x="451" y="230" width="810" height="531" key="Vcs.Push.Dialog.v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607448563135" />
     <state width="775" height="437" key="XDebugger.FullValuePopup" timestamp="1606675020007">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -745,20 +756,21 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="634" y="100" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1606937153250" />
-    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606413469652">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="733" y="450" width="447" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607449120535">
+      <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606413469652" />
+    <state x="733" y="450" width="447" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.29.1920.1051@0.29.1920.1051" timestamp="1607449120535" />
     <state x="531" y="269" key="run.anything.popup" timestamp="1607444248405">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606672489746" />
     <state x="531" y="269" key="run.anything.popup/0.29.1920.1051@0.29.1920.1051" timestamp="1607444248405" />
-    <state x="539" y="249" width="840" height="825" key="search.everywhere.popup" timestamp="1607031446659">
+    <state x="539" y="249" width="840" height="825" key="search.everywhere.popup" timestamp="1607448712984">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606925878758" />
-    <state x="539" y="249" width="840" height="825" key="search.everywhere.popup/0.29.1920.1051@0.29.1920.1051" timestamp="1607031446659" />
+    <state x="539" y="249" width="840" height="825" key="search.everywhere.popup/0.29.1920.1051@0.29.1920.1051" timestamp="1607448712984" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
